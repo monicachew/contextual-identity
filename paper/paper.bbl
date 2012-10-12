@@ -1,0 +1,232 @@
+\begin{thebibliography}{10}
+
+\bibitem{browserid}
+Ben Adida.
+\newblock {Deploying BrowserID at Mozilla}.
+\newblock
+  \url{http://identity.mozilla.com/post/12950196039/deploying-browserid-at-moz%
+illa}, November 17 2011.
+
+\bibitem{ABBJ10}
+Gaurav Aggrawal, Elie Bursztein, Collin Jackson, and Dan Boneh.
+\newblock An analysis of private browsing modes in modern browsers.
+\newblock In {\em Proc. of 19th Usenix Security Symposium}, 2010.
+
+\bibitem{barth}
+Adam Barth, Anupam Datta, John~C. Mitchell, and Helen Nissenbaum.
+\newblock {Privacy and Contextual Integrity: Framework and Applications}.
+\newblock In {\em IEEE Symposium on Security and Privacy}, 2006.
+
+\bibitem{fb_names}
+Facebook~Help Center.
+\newblock {Facebook's Name Policy}.
+\newblock \url{http://www.facebook.com/help/?page=258984010787183}, October 10
+  2012.
+
+\bibitem{chew}
+Monica Chew, Dirk Balfanz, and Ben Laurie.
+\newblock {(Under)mining Privacy in Social Networks}.
+\newblock In {\em Web 2.0 Security and Privacy}, 2008.
+
+\bibitem{oauth}
+Ed. D.~Hardt.
+\newblock {The OAuth 2.0 Authorization Framework}.
+\newblock \url{http://tools.ietf.org/html/draft-ietf-oauth-v2-31}, July 31
+  2012.
+
+\bibitem{boyd1}
+danah boyd.
+\newblock Privacy and publicity in the context of big data.
+\newblock \url{http://www.danah.org/papers/talks/2010/WWW2010.html}, 2010.
+\newblock Raleigh, NC.
+
+\bibitem{skins}
+Rachna Dhamija and J.~D. Tygar.
+\newblock {The battle against phishing: Dynamic Security Skins}.
+\newblock In {\em Symposium on Usable Privacy and Security}, 2005.
+
+\bibitem{fbtips2}
+Alicia Eler.
+\newblock {Top 5 Facebook Privacy Tips}.
+\newblock
+  \url{http://www.readwriteweb.com/archives/top_5_facebook_privacy_tips.php},
+  April 2012.
+
+\bibitem{goffman}
+Erving Goffman.
+\newblock {\em {The Presentation of Self in Everyday Life}}.
+\newblock Anchor, 1959.
+
+\bibitem{maine}
+Elizabeth Hartfield.
+\newblock {Maine Candidate's World of Warcraft Persona Stirs Debate}.
+\newblock
+  \url{http://abcnews.go.com/blogs/politics/2012/10/maine-candidates-world-of-%
+warcraft-persona-stirs-debate/}, October 5 2012.
+
+\bibitem{helft}
+Miguel Helft.
+\newblock {Google Thinks It Knows Your Friends}.
+\newblock
+  \url{http://bits.blogs.nytimes.com/2007/12/26/google-thinks-it-knows-your-fr%
+iends/}, December 26 2007.
+
+\bibitem{google_names}
+Google Help.
+\newblock {Google+ Page and Profile Names}.
+\newblock
+  \url{http://support.google.com/plus/bin/answer.py?hl=en&answer=1228271},
+  October 10 2012.
+
+\bibitem{patientslikeme}
+Benjamin Heywood, James Heywood, and Jeff Cole.
+\newblock {PatientsLikeMe}.
+\newblock \url{http://www.patientslikeme.com/}, October 10 2012.
+
+\bibitem{jung}
+C.~G. Jung.
+\newblock {\em Two Essays on Analytical Psychology}.
+\newblock London, 1953.
+
+\bibitem{disconnect}
+Brian Kennish.
+\newblock {Meet Disconnect}.
+\newblock \url{http://byoogle.blogspot.com/2010/12/meet-disconnect.html},
+  December 2010.
+
+\bibitem{aboutprofile}
+Edward Lee.
+\newblock {about:profile -- Analyzing Data in {F}irefox}.
+\newblock
+  \url{https://blog.mozilla.org/labs/2012/10/about-profile-analyzing-data-in-f%
+irefox}, October 2012.
+
+\bibitem{lindamood}
+Jack Lindamood, Raymond Heatherly, Murat Kantarcioglu, and Bhavani
+  Thuraisingham.
+\newblock {Inferring private information using social network data}.
+\newblock In {\em WWW}, 2009.
+
+\bibitem{timeline}
+Matthew Lynley.
+\newblock {Facebook on Privacy Scare: Nothing to See Here}.
+\newblock
+  \url{http://blogs.wsj.com/digits/2012/09/24/facebook-on-privacy-scare-nothin%
+g-to-see-here/}, September 24 2012.
+
+\bibitem{dnt}
+J.~Mayer, A.~Narayanan, and S.~Stamm.
+\newblock {Do Not Track: A Universal Third-Party Web Tracking Opt Out}.
+\newblock \url{http://tools.ietf.org/html/draft-mayer-do-not-track-00}, March 7
+  2011.
+
+\bibitem{delete}
+Viktor Mayer-Schoenberger.
+\newblock {\em {Delete: The Virtue of Forgetting in the Digital Age}}.
+\newblock Princeton University Press, July 2011.
+
+\bibitem{mccarthy}
+Caroline McCarthy.
+\newblock {MoveOn.org takes on Facebook's `Beacon' ads}.
+\newblock \url{http://news.cnet.com/8301-13577_3-9821170-36.html}, November 20
+  2007.
+
+\bibitem{kitchenaid}
+Mark Memmott.
+\newblock {KitchenAid apologizes for `offensive tweet' about Obama's
+  grandmother}.
+\newblock
+  \url{http://www.npr.org/blogs/thetwo-way/2012/10/04/162293140/kitchenaid-apo%
+logizes-for-offensive-tweet-about-obamas-grandmother}, October 4 2012.
+
+\bibitem{mislove}
+Alan Mislove, Bimal Viswanath, Krishna~P. Gummadi, and Peter Druschel.
+\newblock {You Are Who You Know: Inferring User Profiles in Online Social
+  Networks}.
+\newblock In {\em WDSM}, 2010.
+
+\bibitem{fb_connect}
+Dave Morin.
+\newblock {Announcing Facebook Connect}.
+\newblock
+  \url{http://developers.facebook.com/blog/post/2008/05/09/announcing-facebook%
+-connect/}, May 9 2008.
+
+\bibitem{nakashima}
+Ellen Nakashima.
+\newblock {Feeling Betrayed, Facebook Users Force Site to Honor Their Privacy},
+  November 30 2007.
+
+\bibitem{narayanan1}
+Arvind Narayanan and Vitaly Shmatikov.
+\newblock {Robust De-anonymization of Large Sparse Datasets}.
+\newblock In {\em IEEE Symposium on Security and Privacy}, 2008.
+
+\bibitem{narayanan2}
+Arvind Narayanan and Vitaly Shmatikov.
+\newblock {De-anonymizing Social Networks}.
+\newblock In {\em IEEE Symposium on Security and Privacy}, 2009.
+
+\bibitem{nissenbaum}
+Helen Nissenbaum.
+\newblock {\em {Privacy in Context: Technology, Policy, and the Integrity of
+  Social Life}}.
+\newblock Stanford University Press, 2010.
+
+\bibitem{weiner}
+Adam Ostrow.
+\newblock {Rep. Weiner meant to send lewd photo as direct message}.
+\newblock \url{http://mashable.com/2011/06/06/anthony-weiner-direct-message/},
+  June 6 2011.
+
+\bibitem{chrysler}
+Erik Qualman.
+\newblock {Chrysler Fires Agency over F*** Tweet}.
+\newblock
+  \url{http://www.socialnomics.net/2011/03/14/chrysler-fires-agency-over-f-twe%
+et/}, March 14 2011.
+
+\bibitem{fbtips1}
+Adam Rosenberg.
+\newblock {5 Essential Facebook Privacy Tips}.
+\newblock \url{http://mashable.com/2010/05/18/facebook-privacy-tips/}, May
+  2010.
+
+\bibitem{tamir}
+Diana~I. Tamir and Jason~P. Mitchell.
+\newblock {Disclosing information about the self is intrinsically rewarding}.
+\newblock In {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, May 2012.
+
+\bibitem{tang}
+Jie Tang, Tiancheng Lou, and Jon Kleinberg.
+\newblock {Inferring Social Ties across Heterogenous Networks}.
+\newblock In {\em 5th ACM Symposium on Web Search and Data Mining}, 2012.
+
+\bibitem{collusion}
+Atul Varma.
+\newblock {Collusion}.
+\newblock \url{http://www.toolness.com/wp/2011/07/collusion/}, 2011.
+
+\bibitem{wang}
+Yang Wang, Gregory Norcie, Saranga Komanduri, Pedro~Giovanni Leon, Lorrie~Faith
+  Cranor, and Alessandro Acquisti.
+\newblock {``I regretted the minute I pressed share'': A Qualitative Study of
+  Regrets on Facebook}.
+\newblock In {\em Symposium on Usable Privacy and Security}, 2011.
+
+\bibitem{yegge}
+Todd Wasserman.
+\newblock {Google Engineer Accidentally Posts Rant about Google+}.
+\newblock
+  \url{http://mashable.com/2011/10/12/google-engineer-rant-google-plus/},
+  October 12 2011.
+
+\bibitem{fbusers}
+Mark Zuckerberg.
+\newblock {One Billion People on Facebook}.
+\newblock
+  \url{http://newsroom.fb.com/News/One-Billion-People-on-Facebook-1c9.aspx},
+  October 2012.
+
+\end{thebibliography}
