@@ -84,28 +84,37 @@ framework to understand existing privacy violations, and propose mitigations to
 those violations.
 
 \section{Definitions}
-Let
-\begin{itemize}
-\item $R$ be a set of actors and their relationships to the user
-\item $T$ be a set of tasks and their side-effects when performed in service of
-$R$
-\item $P$ an impression that actors in $R$ have of the user when performing tasks in $T$
-\end{itemize}
-Let a \textbf{contextual identity} $I$ be a loose coupling of $(R, T, P)$.
-A user may have multiple of these. These identities change over time, as users
-form and dissolve relationships, and focus on different sets of tasks. The
-desirable outcome is that the user can accomplish tasks in $T$ while being able
-to predict $R$ and $P$.
-%predict rather than "control" is deliberate, since a user can't realistically
-%expect to engage in behavior that violates social norms and give whatever
-%impression they want
 
-This definition focusses on relationships because most privacy concerns stem
-from causing problems with people the users knows~\cite{wang}. This definition
-focusses on tasks because users are task-oriented, and it is easy to map user
-actions (page navigation, sending email, posting, filling forms) to tasks.
-(include?) The definitions of $R$ and $P$ are deliberately underspecified, as
-this is work in progress.
+\begin{definition}
+  Given:
+  \begin{itemize}
+    \item $R$, a set of actors and their relationships to the user
+    \item $T$, a set of tasks and their side-effects
+    \item $p$, an identity projected by a user or perceived by actors in $R$
+  \end{itemize}
+\medskip
+
+  We define a Contextual Identity $I = \{R,T,p\}$, where a user is performing tasks $T$ in view of or interaction with actors in $R$, while representing himself as identity $p$.
+\end{definition}
+
+A user may have multiple contextual identites $I$. These identities change over
+time, as users form and dissolve relationships, and focus on different sets of
+tasks. The user's goal is that the user can accomplish tasks in $T$, interact
+with those in $R$ and claim to be $p$  while being able to predict and assert
+control over as much of $I$ as possible.
+
+Our definition focuses on relationships because most privacy concerns stem
+from causing an unexpected exchange of data with people the users
+knows~\cite{wang}. Tasks are key because users are task-oriented, and it is
+easy to map user actions (page navigation, sending email, posting, filling
+forms) to tasks.  The definition of $R$ is deliberately underspecified, as this
+is work in progress.
+
+\begin{definition}
+  A Contextual Identity Violation occurs when a user's contextual identity parameters $R,T,P$ are controlled by others.  When a user's tasks are shared with the wrong set $R$, the wrong projected identifier $p$ is employed, or a user is perceivied as undertaking a set of tasks $T$ they do not anticipate, a violation of the integrity of Contextual Identity occurs.
+\end{definition}
+
+Using these definitions, we characterize different types of violation by what part of the contextual identity the user cannot control, and then show how control can be reasserted by a user who employs various mitigation tools.
 
 \section{Previous work}
 
