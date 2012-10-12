@@ -16,7 +16,7 @@
 \usepackage{hyperref}
 \usepackage{breakurl}
 \usepackage{comment}
-%\usepackage{fullpage}
+\usepackage{fullpage}
 
 \newcommand\T{\rule{0pt}{2.6ex}}
 \newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
@@ -94,14 +94,17 @@ those violations.
   \end{itemize}
 \medskip
 
-  We define a Contextual Identity $I = \{R,T,p\}$, where a user is performing tasks $T$ in view of or interaction with actors in $R$, while representing himself as identity $p$.
+  We define a Contextual Identity $I = \{R,T,p\}$, where a user performs tasks
+$T$ in view of or interaction with actors in $R$, while representing identity
+$p$.  
+
 \end{definition}
 
-A user may have multiple contextual identites $I$. These identities change over
-time, as users form and dissolve relationships, and focus on different sets of
-tasks. The user's goal is that the user can accomplish tasks in $T$, interact
-with those in $R$ and claim to be $p$  while being able to predict and assert
-control over as much of $I$ as possible.
+A user may have multiple contextual identites $\{I\}$. These identities change
+over time, as users form and dissolve relationships, and focus on different
+sets of tasks. The user's goal is to accomplish tasks in $T$,
+interact with those in $R$ and claim to be $p$  while being able to predict and
+assert control over as much of $I$ as possible.
 
 Our definition focuses on relationships because most privacy concerns stem
 from causing an unexpected exchange of data with people the users
@@ -111,7 +114,12 @@ forms) to tasks.  The definition of $R$ is deliberately underspecified, as this
 is work in progress.
 
 \begin{definition}
-  A Contextual Identity Violation occurs when a user's contextual identity parameters $R,T,P$ are controlled by others.  When a user's tasks are shared with the wrong set $R$, the wrong projected identifier $p$ is employed, or a user is perceivied as undertaking a set of tasks $T$ they do not anticipate, a violation of the integrity of Contextual Identity occurs.
+  A Contextual Identity Violation occurs when a user's contextual identity
+parameters $R,T,p$ are controlled by others.  When a user's tasks are shared
+with the wrong set $R$, the wrong projected identifier $p$ is employed, or a
+user is perceivied as undertaking a set of tasks $T$ they do not anticipate, a
+violation of the integrity of Contextual Identity occurs.
+
 \end{definition}
 
 Using these definitions, we characterize different types of violation by what part of the contextual identity the user cannot control, and then show how control can be reasserted by a user who employs various mitigation tools.
@@ -290,7 +298,7 @@ Persona is the suite of tools that implements the BrowserID protocol, and it
 supports multiple email identifiers~\cite{browserid}. In this case, when the
 user decides to register for a service using Persona, the task $T$ they are
 performing is authentication, the relationships $R$ are ones they will engage
-in when using the service, and $P$ is tied to the email identifier they use to
+in when using the service, and $p$ is tied to the email identifier they use to
 register for the service. Because we can categorize the type of service by URL
 as \texttt{aboutprofile} does, Persona could prompt the user when they're about
 to link the same email identifier to radically different contextual identities,
