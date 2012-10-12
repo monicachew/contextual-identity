@@ -122,9 +122,13 @@ context and making information discoverable can lead to user distress (even if
 the information was previously public, but not easily
 discoverable)~\cite{boyd1,chew,nissenbaum}.
 
-Barth et al.~ provide a formal model for contextual integrity of user
-data~\cite{barth}. In contrast to this work, the contextual integrity model
-focusses on data as principal rather than users.
+Barth et al.~provide a formal model for contextual integrity of user
+data~\cite{barth}. The contextual integrity model focusses on the flow of
+personal information in terms of knowledge states held by agents rather than on
+user identity, and works well for modeling privacy legislation and policy. In
+contrast, this work's model provides a framework to understand users' ability
+to represent which identity they want to use depending on context, and works
+well for modeling software features.
 
 \begin{comment}TODO: figure out how to cite this. Why is this short
 paper's model worth pursuing? It's simpler, and focusses on the user rather
@@ -156,11 +160,17 @@ to the user's Google Talk contacts\footnote{Google Talk contacts are everyone
 with whom a user has chatted, which might include co-workers, supervisors, and
 friends}. Although this feed was always public, prior to this launch it was not
 discoverable, leading to a bad experience for many users~\cite{helft}. In
-September 2012, Facebook imported old wall posts from 2008 into the new
-Timeline interface.  Although wall posts were always visible from profile
-pages, the new Timeline interface brought old wall posts (which users used to
-treat as private messages, before the advent of ``Like'' and comment buttons)
-to the attention of an audience that the user never intended~\cite{timeline}.
+February 2010, Google Buzz launched, a product that
+exposed the user's most frequent Gmail and Google Talk contacts and their
+publicly available (through previously less discoverable) news and photos.  The
+combination of exposing contacts (which could include abusive ex-husbands,
+co-workers, and friends), as well as aggressively linking photos and news
+items, resulted in a huge backlash~\cite{fugitivus,buzz}. In September 2012,
+Facebook imported old wall posts from 2008 into the new Timeline interface.
+Although wall posts were always visible from profile pages, the new Timeline
+interface brought old wall posts (which users used to treat as private
+messages, before the advent of ``Like'' and comment buttons) to the attention
+of an audience that the user never intended~\cite{timeline}.
 
 In all these examples, the audience $R$ of the identity expanded without user
 intervention.
