@@ -43,17 +43,18 @@ Helen Nissenbaum has long argued that privacy violations come not from the
 simple sharing of personal information, but rather from sharing that
 information in a way that violates social norms, or in the wrong
 context~\cite{nissenbaum}. The desire for spontaneous, positive human
-interaction often necessitates sharing personal information. Take, for example,
+interaction often leads to sharing personal information. For example, take
 PatientsLikeMe~\cite{patientslikeme}. This site functions as a support group
-and also a place for people to share health information, such as drug regimens,
+and as a place for people to share health information, such as drug regimens,
 treatment history, side-effects, and more. Though this information is
 traditionally considered extremely sensitive, the users of this site clearly
-consider the benefits of sharing (longitudinal graphs of their own health
-history, building community with people who share their disease) to outweigh
-the privacy risks. So long as the contextual integrity of the shared data is
-kept intact, users will continue to trust and use the site. Selling user data
-intended for one purpose for another (e.g., to insurance companies to discover
-uninsurable patients) would be a clear violation of that expectation.
+value the benefits of sharing (longitudinal graphs of their own health history,
+building community with people who share their disease). Further, sharing
+personal information does not mean that the users don't value privacy.  Selling
+user data originally intended for one purpose for another (e.g., to insurance
+companies to discover uninsurable patients) would be a gross violation of
+users' privacy expectations.
+
 %this story is a positive story to shock security folk with the breadth and
 %depth of personal information that ordinary users will share
 % instead we could lead with a shocking, negative story like how gay youth get
@@ -65,10 +66,9 @@ who your intended audience is, how many people will overhear you, and how
 likely your information is to be re-broadcast in a different context. It is
 also true that in offline environments, humans don't have perfect memories and
 will eventually what forget.  However, with the advent of increasingly vast
-searching, indexing, and archiving cabilities, one cannot rely on forgetting in
-online enviroments~\cite{delete}. Thus, managing contextual identities in
-online environments has become increasingly difficult and fraught with
-mistakes.
+searching, indexing, and archiving capabilities, one cannot rely on forgetting
+in online enviroments~\cite{delete}. Thus, managing contextual identities 
+online has become increasingly difficult and fraught with mistakes.
 
 One possible solution to this problem is never to post personal information
 online, or at least to consider the entire world might be the audience.
@@ -80,7 +80,7 @@ recognize this and develop techniques to meet users' needs rather than
 expecting human nature to change.
 
 We provide a simple formalization of the notion of contextual identity, use it as a
-framework to understand existing privacy violations, and analyze mitigations to
+framework to understand existing privacy violations, and analyze mitigations of
 those violations.
 
 \section{Related Work}
@@ -88,7 +88,7 @@ those violations.
 Many authors have discovered attacks to link different contextual identities to
 the same person. Narayanan and Shmatikov present a re-identification technique
 to merge anonymized social graphs from different networks and prove that
-Netflix and IMDB and Flickr and Twitter can be
+user identifiers from Netflix and IMDB and Flickr and Twitter can be
 linked~\cite{narayanan1,narayanan2}. Lindamood et al.~and Mislove et al.~show
 how to infer previously undisclosed information from released social networking
 data~\cite{lindamood,mislove}.
@@ -112,14 +112,15 @@ paper's model worth pursuing? It's simpler, and focuses on the user rather
 than data.
 \end{comment}
 
-Although network attacks are very powerful, at the current time they require a
-level of expertise and resources not typically held by those causing the most
-worry to users. A brief survey of social networking advice reveals that the
-major causes of concern come not from a dedicated graph expert, but people
+Although network inference and merging attacks are very powerful, at the
+current time they require a level of expertise and resources not available to
+most people. A brief survey of social networking
+advice reveals that the
+major causes of concern come not from a dedicated social graph expert, but people
 close to the user: friends, family, and co-workers~\cite{fbtips2,fbtips1}.
 Surveys conducted by Wang et al.~show that typical regrets from posting on
 Facebook stem almost exclusively from fear of negative interactions with people
-that the users knows~\cite{wang}. The consequences of these negative
+that the user knows~\cite{wang}. The consequences of these negative
 interactions can lead to loss of employment or breaking personal relationships.
 Most previous privacy research has focused on distant adversaries, where the
 bad actor is a behavioral tracking service, state agent or unknown
@@ -143,7 +144,7 @@ $p$.
 
 \end{definition}
 
-A user may have multiple contextual identites $\{I\}$. These identities change
+A user may have multiple contextual identities $\{I\}$. These identities change
 over time, as users form and dissolve relationships, and focus on different
 sets of tasks. The user's goal is to accomplish tasks in $T$,
 interact with those in $R$ and claim to be $p$  while being able to predict and
@@ -153,14 +154,13 @@ Our definition focuses on relationships because most privacy concerns stem
 from causing an unexpected exchange of data with people the users
 knows~\cite{wang}. Tasks are key because users are task-oriented, and it is
 easy to map user actions (page navigation, sending email, posting, filling
-forms) to tasks.  The definition of $R$ is deliberately underspecified, as this
-is work in progress.
+forms) to tasks.
 
 \begin{definition}
-  A Contextual Identity Violation occurs when a user's contextual identity
+  A Contextual Identity Violation occurs when
 parameters $R,T,p$ are controlled by others.  When a user's tasks are shared
 with the wrong set $R$, the wrong projected identifier $p$ is employed, or a
-user is perceivied as undertaking a set of tasks $T$ they do not anticipate, a
+user is perceived as performing tasks $T$ they do not anticipate, a
 violation of the integrity of Contextual Identity occurs.
 
 \end{definition}
@@ -173,7 +173,7 @@ Using these definitions, we characterize different types of violation by what pa
 (Lack of control over $R$).\\
 Re-distributing information out of its original context often leads to
 embarrassment~\cite{nissenbaum}.  In November 2007, Facebook Beacon allowed
-third-party sites to publish purchases, travel bookings, movie rentals to the
+third-party sites to publish purchases, travel bookings, movie rentals and more to the
 user's activity stream.  Because of poor opt-out and lack of visibility into
 what was being published, user outcry was immediate~\cite{mccarthy,nakashima}.
 In December 2007, Google Reader exposed RSS feeds of user-marked news stories
@@ -189,55 +189,32 @@ co-workers, and friends), as well as aggressively linking photos and news
 items, resulted in a huge backlash~\cite{fugitivus,buzz}. In September 2012,
 Facebook imported old wall posts from 2008 into the new Timeline interface.
 Although wall posts were always visible from profile pages, the new Timeline
-interface brought old wall posts (which users used to treat as private
-messages, before the advent of ``Like'' and comment buttons) to the attention
-of an audience that the user never intended~\cite{timeline}.
+interface brought old wall posts which users used to treat as private
+messages, before the advent of ``Like'' and comment buttons, to the attention
+of an audience that the user never anticipated~\cite{timeline}.
 
-In all these examples, the audience $R$ of the identity expanded without user
+In all these examples, the audience $R$ of the contextual identity expanded without user
 intervention.
 
 \subsection{Unsatisfiable policies}
+\label{sec:policies}
 (Lack of control over $p$).\\
-Sometimes service providers have policies which preclude isolating multiple
-identites. For example, Facebook and Google have a ``Real Names'' policy, which
+Some service providers have policies which preclude isolating multiple
+contextual identities. For example, Facebook and Google have a ``Real Names'' policy, which
 requires users to register for accounts with their legal
 name~\cite{fb_names,google_names}.  These policies presume the users can be one
 person to everyone. These policies ignore that community-building happens in
 many different contexts, that users have many legitimate reasons for presenting
 different identities in different contexts, and that users don't necessarily
 want those identities to be linked. For example, disallowing avatar handles as
-a primary identifier makes building a gaming community difficult at best, and
-linking a gaming identity to a professional identity has already caused
-problems for one exposed has already caused problems for Maine Senate candidate
-and World of Warcraft gamer Colleen Lachowicz in 2012~\cite{maine}.
+a primary identifier makes building a gaming community difficult. 
+Linking a gaming identity to a professional identity has already caused
+problems for 2012 Maine Senate candidate
+and World of Warcraft gamer Colleen Lachowicz~\cite{maine}.
 
 It is impossible for users who want to isolate multiple contextual identities
 to participate in these networks without violating the terms of service.  The
-Google ``legal name'' policy prohibits users from asserting control over $p$.
-
-\subsection{Federated login}
-(Lack of flexibility in $p$).\\
-Facebook Connect is a login platform that allows third-party websites to
-authenticate users using their Facebook identity~\cite{fb_connect}. Because it
-is against the terms of service to have multiple Facebook accounts, using
-Facebook Connect has the unwanted side-effect of linking multiple contextual
-identities.
-
-Similar to the Unsatisfiable policies, many federated login systems simply
-don't have the ability to allow users multiple $p$ values, or identifiers.
-Other federated login systems may support and allow multiple identifiers, but
-it can be poorly implemented or difficult to discover, which essentially means
-the feature isn't used.
-There are some login platforms and protocols, including OAuth and BrowserID
-that do not suffer from this policy or design error~\cite{browserid,oauth},
-giving a user better control over which value of $p$ he employs in his
-contextual identity.
-\begin{comment} (TODO:
-this is actually kinda complicated -- yahoo, twitter, google allow multiple
-accounts but the multi-login support is broken at google, not sure how it is
-with others, oauth protocol supports multiple accounts, persona clearly
-supports multiple accounts)
-\end{comment}
+``Real Names'' policy prohibits users from asserting control over $p$.
 
 \subsection{User interface errors}
 (Lack of control over $R$).\\
@@ -253,9 +230,27 @@ surprise that DM failures are exceedingly common.
 
 Similar to DM failures, posting to the wrong account is also a common mistake.
 Because many jobs require posting on social networks on behalf of the company,
-many people now have multiple accounts for personal and business use.
-KitchenAid, Chrysler, and Google are just three examples whose employees have
+it is common to have multiple accounts for personal and business use.
+KitchenAid, Chrysler, and Google are three companies whose employees have
 made this mistake in the past year~\cite{kitchenaid,chrysler,yegge}.
+
+\subsection{Federated login}
+\label{sec:login}
+(Lack of flexibility in $p$).\\
+Facebook Connect is a login platform that allows third-party websites to
+authenticate users using their Facebook identity~\cite{fb_connect}. Because it
+is against the terms of service to have multiple Facebook accounts, using
+Facebook Connect has the unwanted side-effect of linking multiple contextual
+identities.
+
+Similar to section~\ref{sec:policies}, many federated login systems simply
+don't have the ability to allow users multiple $p$ values, or identifiers.
+Other federated login systems have support for multiple identifiers, but
+this feature can be poorly implemented or difficult to discover, leading to
+low use.
+Some login platforms and protocols, such as OAuth and BrowserID,
+do not suffer from this policy or design error~\cite{browserid,oauth},
+giving a user better control over which value of $p$ to employ.
 
 \subsection{Third party tracking}
 \label{sec:tracking}
@@ -265,7 +260,7 @@ to tracking by virtue of browsing the web. Third-party cookies, flash cookies,
 web bugs, device fingerprinting, geolocation, history sniffing and more are
 techniques that a dedicated third party could use to collect browsing history
 and link contextual identities through correlation of tasks in $T$ for various
-identity values $p$.
+values of $p$.
 
 \section{Possible mitigations}
 
@@ -273,17 +268,14 @@ identity values $p$.
 Accurately detecting the user's current contextual identity, whether
 heuristically or through asking the user, is paramount to helping the user
 manage it.
-
-Although a person's contextual identities may be subconsciously clear,
+Although a user may subconsciously be aware of their contextual identities,
 expecting users to enumerate their identities and manually curate them is
-probably too burdensome. Firefox has a Profile Manager, but not many people
-know about it or how to use it, to the extent that it will be
-removed\footnote{See \url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}}.
+probably too burdensome. Firefox has a Profile Manager, but it is so difficult to use that it will be removed.\footnote{See \url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}}.
 
 Tang et al.~show that most people do not take the time to create labels and
 maintain friend lists~\cite{tang}. However, the same authors show how to use
 heterogenous networks to infer relationship types (e.g., manager-subordinate)
-through the graph itself is unlabeled.
+though the graph itself is unlabeled.
 
 It may also be possible to infer tasks from the user's activity. For example,
 the \texttt{about:profile} Firefox extension uses the Open Directory Project
@@ -304,13 +296,14 @@ for private browsing mode, and thus interaction with extensions, treatment of
 cookies, history, and bookmarks upon entering and exiting this mode are
 different and serve different use cases. Depending on user desire, $R$ when
 using private browsing mode may be other household members, or it may be a
-service to which the user wants to limit cookie leakage. A strong contextual
-identity mechanism allows users control over $R$ or over $T$ when $R$ is
-clearly identified to them, but the various privacy modes in different web
-browsers either allows the user control over $T$ or over $R$, but not both at
-the same time.
+service to which the user wants to limit cookie leakage.
+%this requires more explanation, omitting for now. A strong contextual
+%identity mechanism allows users control over $R$ or over $T$ when $R$ is
+%clearly identified to them, but the various privacy modes in different web
+%browsers either allows the user control over $T$ or over $R$, but not both at
+%the same time.
 
-A partial solution is to prompt the user when they're about to link
+Another partial solution is to prompt the user when they're about to link
 multiple contextual identities through a federated login service. For example,
 Persona is the suite of tools that implements the BrowserID protocol, and it
 supports multiple email identifiers~\cite{browserid}. In this case, when the
@@ -318,67 +311,57 @@ user decides to register for a service using Persona, the task $T$ they are
 performing is authentication, the relationships $R$ are ones they will engage
 in when using the service, and $p$ is tied to the email identifier they use to
 register for the service. Because we can categorize the type of service by URL
-as \texttt{aboutprofile} does, Persona could prompt the user when they're about
+as \texttt{about:profile} does, Persona could prompt the user when they're about
 to link the same email identifier to radically different contextual identities,
 such as ones for dating and professional use.  Persona allows the user direct
-control over $p$ given a context ($R,T$) in which they're authenticating.
+control over $p$ given a context {$R,T$} in which they're authenticating.
 
-\begin{comment}
-TODO: Discuss how private browsing mode maps to R, T, P?
-
-At home use case:
-R is household
-T is porn?
-P is null
-
-Searching use case:
-R is Google
-T is search
-P is null
-
-GoogleShring use case
-R is Google and the GoogleSharing proxy
-T is search or browsing (analytics) (can't use any services that require logon)
-P is random
-\end{comment}
+\subsection{Expiring contextual identities}
+Oftentimes a user may have a long-term task, such as wedding planning or house
+buying, that requires constructing a contextual identity. The tasks associated
+with this identity have an externally imposed deadline and may have long-lived
+side-effects, such as long-term cookies that reveal sensitive information
+(e.g., the neighborhood of the house purchase, income information derived from
+purchases, other demographic data). For contextual identities that have
+outlived their usefulness, users would benefit from destruction of side-effects
+in $T$ such as cookie data.
 
 \subsection{Recovering from Mistakes}
 \subsubsection{Auditing}
 A major cause of user embarrassment is exposing information to the wrong
-audience, as illustrated in Section~\ref{sec:examples}. A browser is in an
+audience, as illustrated in section~\ref{sec:examples}. A browser is in an
 ideal position to intermediate social network posts, aggregate them locally,
 and present them to the user when they desire to audit their digital footprint.
-
 For example, a user could see all of the comments and posts they made in the
-last week and redact content that is sensitive or too negative, topics that are
-frequently regretted~\cite{wang}.  This redacting is equivalent to asserting
-better control over $T$. Although this approach does not help when the service
+last week and redact content that is sensitive or too negative, a frequent cause
+of regret~\cite{wang}.  Redaction allows the user to assert
+better control over $T$ as well as $p$. Although this approach does not help when the service
 provider decides to change the audience on the user's behalf (loss of control
 over $R$), auditing gives the user a good opportunity to review posts that
 might cause regrets. In the case of high-volume users, such a tool could
 incorporate sentiment analysis to aid the user in finding particularly
 problematic content.  This effectively helps users adjust $T$ when $R$ changes
-unexpectedly; while it does not help bring users into better control over $R$,
-it can help them minimize the impact of a changing $R$.
+unexpectedly.
 
 Profiles can be generated by user-supplied application-level data, but also
 implicitly through browsing via techniques in Section~\ref{sec:tracking}. Collusion is a
-tool for visualizing cookies~\cite{collusion}, in particular the third-party
+tool for visualizing cookies~\cite{collusion}, in particular third-party
 cookies set by tracking sites which are typically ad networks.  Once the user
 knows which sites are tracking them, they can choose to block cookies from
 those sites.  This type of tool allows users good control over $R$ by limiting
-who sees the tracks they create.
+who sees the side-effects in $T$.
 
 \subsubsection{Remembering to Forget}
-Humans don't have perfect memories, and one could argue that social
-networks should also forget~\cite{delete}. Many users already engage in manual auditing and
+Humans don't have perfect memories, and perhaps social
+networks should not either~\cite{delete}. Many users already engage in manual auditing and
 deletion of old posts~\cite{fbtips2}. A better solution would be to build tools
 that let the user manage this more easily through an API: both Twitter and Facebook provide
 APIs for deletion\footnote{At the time of this writing, Google Plus offers a
 read-only API}. One way to reduce the likelihood of linked contextual
-identities would be to provide applications that expire posts after some time.
-This would help users better contain the whole context ($R,T$) by segmenting
-one large audience and one large set of tasks into smaller temporal partitions.
+identities or assert better control over $p$ would be to provide applications that expire posts after some time.
+Deletion ane expiration also reduce $R$ (in the case of public posts) and $T$.
+%This would help users better contain the whole context ($R,T$) by segmenting
+%one large audience and one large set of tasks into smaller temporal partitions.
 
 \begin{comment}
 \cite{viegas}blogger's expectation of privacy
@@ -390,17 +373,23 @@ Sometimes a user might want to prevent mistakes from being made in the first
 place. If a user is concerned about a particular service provider, they can
 install an extension like Disconnect to disallow cookies from that provider
 unless they explicitly want to interact with that site~\cite{disconnect}.
-This type of tool (cookie blocker) helps users assert control over audience ($R$).
+This type of tool (cookie blocker) helps users assert control over audience $R$.
 
 Protocols like Do Not Track are also a good first step to solving this
 problem~\cite{dnt}. Although Do Not Track is unenforceable from the client
 side, it provides a clear signal to service providers and ad networks
 that the user does not want to be tracked. As adoption increases, ignoring this
 signal will lead to loss of reputation for service providers that explicitly
-act against their users' wishes.
-This type of tool (cookie blocker) helps users assert control over the effects of their actions ($T$).
+act against their users' wishes, helping
+users assert control over the effects of their actions $T$.
 
-The Google Sharing project allows users of Google services to share and mix the way Google identifies them~\cite{googlesharing}.  The effect is that users employ a contextual identity $\{T_{gs}, R_{gs}, p\}$ with a shared $p$.  These users employ it only for Google sites ($R_{gs} = Google$) and can accomplish tasks $T_{gs}$ while associating all their actions with a random $p$ also associated with many other users.  This devalues $p$ and makes it difficult to correlate $T_{gs}$ with $T$ from another of the users' contextual identities.
+The Google Sharing project allows users of Google services to confound the way
+Google identifies them~\cite{googlesharing}.  The effect is that users employ a
+contextual identity with a shared $p$.  These users
+employ it only for Google sites and can accomplish tasks
+while associating all their actions with a random $p$ also associated
+with many other users.  This devalues $p$ and makes it difficult to correlate
+tasks with a particular user.
 
 Channel encryption systems like TOR\footnote{The Onion Router: \url{https://www.torproject.org}} allow the users more network secrecy; this allows them to better control their audience $R$ by hiding their actions from network operators.
 
@@ -415,12 +404,11 @@ Much work has been done for visual verification of domain authenticity in the
 context of phishing, but not much has been done for visual verification of
 which user credentials are active~\cite{skins}.
 
-\begin{comment}
-first party regrets, third party regrets
-impossible to judge how big friends of friends
-\end{comment}
-
 \section{Open problems}
+We are largely ignorant of the ways in which users think about contextual
+identity. Building usable software to manage contextual identity demands
+further research.
+
 The mitigations proposed in this work become more complex in the face of shared
 devices and overlapping identities. There are good reasons to want to intermix
 work and personal identities (increased exposure, serendipitous connections)
@@ -452,6 +440,9 @@ you disagree with their policies, are you allowed to be public about
 that:?\cite{boyd2}
 
 close to you “stranger on a train” “stranger on a plane”
+first party regrets, third party regrets
+impossible to judge how big friends of friends
+
 \end{comment}
 
 \begin{comment}
