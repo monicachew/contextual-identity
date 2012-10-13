@@ -48,12 +48,12 @@ PatientsLikeMe~\cite{patientslikeme}. This site functions as a support group
 and as a place for people to share health information, such as drug regimens,
 treatment history, side-effects, and more. Though this information is
 traditionally considered extremely sensitive, the users of this site clearly
-value the benefits of sharing (longitudinal graphs of their own health history,
-building community with people who share their disease). Further, sharing
-personal information does not mean that the users don't value privacy.  Selling
-user data originally intended for one purpose for another (e.g., to insurance
-companies to discover uninsurable patients) would be a gross violation of
-users' privacy expectations.
+value the benefits of sharing: longitudinal graphs of their own health history,
+building community with people who share their disease. Further, sharing
+personal information does not mean that the users don't value
+privacy~\cite{boyd2}. Selling user data originally intended for one purpose for
+another (e.g., to insurance companies to discover uninsurable patients) would
+be a gross violation of users' privacy expectations.
 
 %this story is a positive story to shock security folk with the breadth and
 %depth of personal information that ordinary users will share
@@ -65,9 +65,9 @@ in online environments. There are cues to help you determine where you are,
 who your intended audience is, how many people will overhear you, and how
 likely your information is to be re-broadcast in a different context. It is
 also true that in offline environments, humans don't have perfect memories and
-will eventually what forget.  However, with the advent of increasingly vast
+will eventually forget.  However, with the advent of increasingly vast
 searching, indexing, and archiving capabilities, one cannot rely on forgetting
-in online enviroments~\cite{delete}. Thus, managing contextual identities 
+in online enviroments~\cite{delete}. Thus, managing contextual identities
 online has become increasingly difficult and fraught with mistakes.
 
 One possible solution to this problem is never to post personal information
@@ -79,9 +79,9 @@ guidelines~\cite{tamir,fbusers}. The security and privacy community should
 recognize this and develop techniques to meet users' needs rather than
 expecting human nature to change.
 
-We provide a simple formalization of the notion of contextual identity, use it as a
-framework to understand existing privacy violations, and analyze mitigations of
-those violations.
+We provide a simple formalization of the notion of contextual identity, use it
+as a framework to understand existing privacy violations, and analyze
+mitigations for those violations.
 
 \section{Related Work}
 
@@ -94,16 +94,16 @@ how to infer previously undisclosed information from released social networking
 data~\cite{lindamood,mislove}.
 
 Many authors have noted how re-broadcasting information information out of
-context and making information discoverable can lead to user distress (even if
+context and making information discoverable can lead to user distress, even if
 the information was previously public, but not easily
-discoverable)~\cite{boyd1,chew,nissenbaum}.
+discoverable~\cite{boyd1,chew,nissenbaum}.
 
 Barth et al.~provide a formal model for contextual integrity of user
 data~\cite{barth}. The contextual integrity model focuses on the flow of
 personal information in terms of knowledge states held by agents rather than on
 user identity, and works well for modeling privacy legislation and policy. In
-contrast, this work's model provides a simple framework to understand users' ability
-to represent which identity they want to project depending on context, and works
+contrast, this work's model provides a simple framework to understand users'
+ability to represent which contextual identity they want to project, and works
 well for modeling how software features affect users' ability to assert choice
 and control.
 
@@ -129,43 +129,53 @@ interactions with others close to them.
 
 \section{Definitions}
 
-\begin{definition}
-  Given:
+Suppose:
   \begin{itemize}
-    \item $R$, a set of actors and their relationships to the user
-    \item $T$, a set of tasks and their side-effects
-    \item $p$, an identity projected by a user or perceived by actors in $R$
+    \item $R$ is a set of actors and their relationships to the user. $R$ may include people that the user knows, service providers, or network operators.
+    \item $T$ is a set of tasks and their side-effects. Examples of tasks
+include page navigation, posting to social networks and searching. Examples of
+side-effects include cookies, geolocation data and browser history.
+    \item $p$ is an impression that the user wishes to project, or that actors
+in $R$ perceive. $p$ encompasses such prosaic information as email identifiers
+or session identifiers, or such sentiment as ``Alice is awesome!''
   \end{itemize}
-\medskip
 
-  We define a Contextual Identity $I = \{R,T,p\}$, where a user performs tasks
-$T$ in view of or interaction with actors in $R$, while representing identity
-$p$.  
-
+\begin{definition} We define a contextual identity $I = \{R,T,p\}$, where a user performs tasks
+$T$ in view of or interaction with actors in $R$, while projecting impression
+$p$.
 \end{definition}
 
 A user may have multiple contextual identities $\{I\}$. These identities change
 over time, as users form and dissolve relationships, and focus on different
 sets of tasks. The user's goal is to accomplish tasks in $T$,
-interact with those in $R$ and claim to be $p$  while being able to predict and
+interact with those in $R$ and project $p$ while being able to predict and
 assert control over as much of $I$ as possible.
 
 Our definition focuses on relationships because most privacy concerns stem
-from causing an unexpected exchange of data with people the users
+from causing an unexpected exchange of data with people the user
 knows~\cite{wang}. Tasks are key because users are task-oriented, and it is
 easy to map user actions (page navigation, sending email, posting, filling
 forms) to tasks.
 
 \begin{definition}
-  A Contextual Identity Violation occurs when
-parameters $R,T,p$ are controlled by others.  When a user's tasks are shared
-with the wrong set $R$, the wrong projected identifier $p$ is employed, or a
-user is perceived as performing tasks $T$ they do not anticipate, a
-violation of the integrity of Contextual Identity occurs.
+A contextual identity violation occurs when the user cannot predict or control
+parameters $R,T,p$.
+\end{definition}
+When a user's tasks are shared with the wrong set $R$, the wrong projected
+identifier $p$ is employed, or a user is perceived as performing tasks $T$ they
+do not anticipate, a violation of the integrity of contextual identity occurs.
 
+\begin{definition}
+Linkage of contextual identities occurs when a set of $\{I\}$ is associated
+with the same user.
 \end{definition}
 
-Using these definitions, we characterize different types of violation by what part of the contextual identity the user cannot control, and then show how control can be reasserted by a user who employs various mitigation tools.
+When this linkage happens against the will or without the knowledge of the
+user, a violation of the integrity of contextual identity occurs.
+
+Using these definitions, we characterize different types of violation by what
+part of the contextual identity the user cannot control, and then show how
+control can be reasserted by a user who employs various mitigation tools.
 
 \section{Contextual identity violations}
 \label{sec:examples}
@@ -193,8 +203,8 @@ interface brought old wall posts which users used to treat as private
 messages, before the advent of ``Like'' and comment buttons, to the attention
 of an audience that the user never anticipated~\cite{timeline}.
 
-In all these examples, the audience $R$ of the contextual identity expanded without user
-intervention.
+In all these examples, the audience $R$ of the contextual identity expanded
+without user intervention.
 
 \subsection{Unsatisfiable policies}
 \label{sec:policies}
@@ -209,8 +219,8 @@ different identities in different contexts, and that users don't necessarily
 want those identities to be linked. For example, disallowing avatar handles as
 a primary identifier makes building a gaming community difficult. 
 Linking a gaming identity to a professional identity has already caused
-problems for 2012 Maine Senate candidate
-and World of Warcraft gamer Colleen Lachowicz~\cite{maine}.
+problems for 2012 Maine Senate candidate and World of Warcraft gamer Colleen
+Lachowicz~\cite{maine}.
 
 It is impossible for users who want to isolate multiple contextual identities
 to participate in these networks without violating the terms of service.  The
@@ -319,7 +329,7 @@ control over $p$ given a context {$R,T$} in which they're authenticating.
 \subsection{Expiring contextual identities}
 Oftentimes a user may have a long-term task, such as wedding planning or house
 buying, that requires constructing a contextual identity. The tasks associated
-with this identity have an externally imposed deadline and may have long-lived
+with this identity have an externally imposed end date and may have long-lived
 side-effects, such as long-term cookies that reveal sensitive information
 (e.g., the neighborhood of the house purchase, income information derived from
 purchases, other demographic data). For contextual identities that have
@@ -359,7 +369,8 @@ that let the user manage this more easily through an API: both Twitter and Faceb
 APIs for deletion\footnote{At the time of this writing, Google Plus offers a
 read-only API}. One way to reduce the likelihood of linked contextual
 identities or assert better control over $p$ would be to provide applications that expire posts after some time.
-Deletion ane expiration also reduce $R$ (in the case of public posts) and $T$.
+Deletion and expiration also reduce $R$ especially in the case of public posts
+and $T$.
 %This would help users better contain the whole context ($R,T$) by segmenting
 %one large audience and one large set of tasks into smaller temporal partitions.
 
@@ -384,12 +395,12 @@ act against their users' wishes, helping
 users assert control over the effects of their actions $T$.
 
 The Google Sharing project allows users of Google services to confound the way
-Google identifies them~\cite{googlesharing}.  The effect is that users employ a
-contextual identity with a shared $p$.  These users
-employ it only for Google sites and can accomplish tasks
-while associating all their actions with a random $p$ also associated
-with many other users.  This devalues $p$ and makes it difficult to correlate
-tasks with a particular user.
+Google identifies them~\cite{googlesharing}. In this case $R$ contains Google
+and the Google Sharing proxy. The effect is that users employ a contextual
+identity with a shared $p$. These users employ it only for Google sites not
+requiring login and can accomplish tasks while associating all their actions
+with a random $p$ also associated with many other users.  This devalues $p$ and
+makes it difficult for Google to correlate tasks with a particular user.
 
 Channel encryption systems like TOR\footnote{The Onion Router: \url{https://www.torproject.org}} allow the users more network secrecy; this allows them to better control their audience $R$ by hiding their actions from network operators.
 
