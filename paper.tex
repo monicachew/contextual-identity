@@ -77,11 +77,18 @@ guidelines~\cite{tamir,fbusers}. The security and privacy community should
 recognize this and develop techniques to meet users' needs rather than
 expecting human nature to change.
 
-We provide a simple formalization of the notion of contextual identity, use it
-as a framework to understand existing privacy violations, and analyze
-mitigations for those violations.
-
 \section{Related Work}
+
+Barth et al.~provide a formal model for contextual integrity of user
+data~\cite{barth}. The contextual integrity model focuses on the flow of
+personal information in terms of knowledge states held by agents rather than on
+user identity, and works well for modeling privacy legislation and policy. Two
+drawbacks of this work are that it is incapable of modeling information that is
+about more than one person, and it is the type of information rather than the
+content of the information that determines whether or not integrity is
+violated. In the context of social networks, information is rarely ever about a
+single person, and the tone of the message is as important to user
+happiness as the content of the message.
 
 Many authors have discovered attacks to link different contextual identities to
 the same person. Narayanan and Shmatikov present a re-identification technique
@@ -95,15 +102,6 @@ Many authors have noted how re-broadcasting information information out of
 context and making information discoverable can lead to user distress, even if
 the information was previously public, but not easily
 discoverable~\cite{boyd1,chew,nissenbaum}.
-
-Barth et al.~provide a formal model for contextual integrity of user
-data~\cite{barth}. The contextual integrity model focuses on the flow of
-personal information in terms of knowledge states held by agents rather than on
-user identity, and works well for modeling privacy legislation and policy. In
-contrast, this work's model provides a simple framework to understand users'
-ability to represent which contextual identity they want to project, and works
-well for modeling how software features affect users' ability to assert choice
-and control.
 
 \begin{comment}TODO: figure out how to cite this. Why is this short
 paper's model worth pursuing? It's simpler, and focuses on the user rather
@@ -328,6 +326,10 @@ text name at the top right of the page.
 Much work has been done for visual verification of domain authenticity in the
 context of phishing, but not much has been done for visual verification of
 which user credentials are active~\cite{skins}.
+
+\section{How do users think about identity?}
+\subsection{Blushproof}
+\subsection{Cookie statistics}
 
 \section{Open problems}
 We are largely ignorant of the ways in which users think about contextual
