@@ -41,29 +41,24 @@ empower users to have better control over their contextual identities.
 \begin{quote}I am large, I contain multitudes. --- Walt Whitman,
 \begin{em}Song of Myself\end{em} \end{quote}
 
-The desire for spontaneous, positive human interaction often requires sharing
-personal information. Sharing information can obviously lead to loss of
-privacy, but the act of sharing alone does not negate expectation of
-privacy~\cite{boyd2}.  Helen Nissenbaum has long argued that privacy violations
-come not from the simple sharing of personal information, but rather from
-sharing that information in a way that violates social norms, or in the wrong
-context~\cite{nissenbaum}.
+The desire for privacy balances the desire for spontaneous, positive human
+interaction, which often requires sharing personal information.  The act of
+sharing alone does not negate expectation of privacy~\cite{boyd2}. Helen
+Nissenbaum has long argued that privacy violations come not from the simple
+sharing of personal information, but rather from sharing that information in a
+way that violates social norms, or in the wrong context~\cite{nissenbaum}.
 
-We consider it a contextual identity violation when
-multiple contextual identities are linked without the user's permission, or the
-user cannot control which contextual identity is presented to a given audience.
-
-Lesbian, gay, bisexual, and transgendered youth are a prime example of this.
-Access to support is crucial for LGTB-identified youth who are at higher risk
-for bullying and suicide than non-LGTB youth, and much of that support is only
-accessible through the Internet in socially conservative areas~\cite{hrc}. In
-2011 Bobbi Duncan and Taylor McCormick, two students at the University of Texas
-at Austin, were inadvertantly outed when their choir director added them to a
-Facebook group for Queer Chorus~\cite{fowler}. Even though both students had
-blocked their parents from seeing any personal posts revealing their sexuality,
-because Queer Chorus is a public group Facebook published notifications to
-Duncan's and McCormick's friends, including their parents. Duncan later
-attempted suicide~\cite{duncan}.
+Lesbian, gay, bisexual, and transgendered youth are at risk for contextual
+identity violations.  Access to support is crucial for LGTB-identified youth
+who are at higher risk for bullying and suicide than non-LGTB youth, and much
+of that support is only accessible through the Internet in socially
+conservative areas~\cite{hrc}. In 2011 Bobbi Duncan and Taylor McCormick, two
+students at the University of Texas at Austin, were inadvertantly outed when
+their choir director added them to a Facebook group for Queer
+Chorus~\cite{fowler}. Even though both students had blocked their parents from
+seeing any personal posts revealing their sexuality, because Queer Chorus is a
+public group Facebook published notifications to Duncan's and McCormick's
+friends, including their parents. Duncan later attempted suicide~\cite{duncan}.
 
 \begin{comment}
 zuckerberg on "having multiple identities is dishonest"
@@ -91,13 +86,13 @@ Barth, Datta, Mitchell, and Nissenbaum provide a formal model for contextual
 integrity of user data~\cite{barth}. The contextual integrity model focuses on
 the flow of personal information in terms of knowledge states held by agents
 acting in given roles, and works well for modeling privacy legislation such as
-HIPPA and COPPA. Two drawbacks of this work are that it is incapable of
-modeling information where the subject involves more than one person, and it
+HIPPA and COPPA. Two drawbacks of this work are that it does not
+model information where the subject involves more than one person, and it
 only takes the type of information into account rather than the content or tone
-of the information.  Thus, the event ``Bob told Alice that Charlie cooked a
+of the information.  ``Bob told Alice that Charlie cooked a
 delicious dinner'' is out of scope of the model.  In the context of social
-networks, information is rarely ever about a single person, and the tone of the
-message is as important to user happiness as the content of the message.
+networks, information is rarely about a single person, and the tone of the
+message is as important to user effect as the content of the message.
 
 Many authors have discovered attacks to link different contextual identities to
 the same person. Narayanan and Shmatikov present a re-identification technique
@@ -124,6 +119,10 @@ we assert that users care more about their interactions with others close to
 them.
 
 \section{Contextual identity violations}
+We consider it a contextual identity violation when
+multiple contextual identities are linked without the user's permission, or the
+user cannot control which contextual identity is presented to a given audience.
+
 \label{sec:examples}
 \subsection{Redistributing information out of context}
 Re-distributing information out of its original context often leads to
@@ -148,7 +147,7 @@ interface brought old wall posts which users used to treat as private messages,
 before the advent of ``Like'' and comment buttons, to the attention of an
 audience that the user never anticipated~\cite{timeline}.
 
-\subsection{Unsatisfiable policies}
+\subsection{Policy errors}
 \label{sec:policies}
 Some service providers have policies which preclude isolating multiple
 contextual identities. For example, Facebook and Google have a ``Real Names''
@@ -201,30 +200,45 @@ made this mistake in the past year~\cite{kitchenaid,chrysler,yegge}.
 We propose new research directions based on the following questions.
 \begin{itemize}
 \item How do users think about identity?
+\item What can we infer about identity?
+\item What threat models (audiences, topics) are important to users?
 \item What are users already doing to preserve contextual identities?
-\item What tasks or topics do users find embarrassing?
 \end{itemize}
 
-plethora of cross posting software, too much damn syndication indicates that
-many users are on multiple platforms.
+\subsection{How do users think about identity?}
+Users' contextual identities may be task-oriented, service-oriented,
+relationship-oriented, or guided by other principles. The long-time existence
+of support for multiple accounts in email clients suggests that many users have
+multiple email identifiers, which could be considered as a proxy for identity
+if tied to service accounts. Similarly, data suggests that a large minority of
+Twitter users have multiple Twitter accounts, and the plethora of cross-posting
+or syndication software from one social network to another suggests that many
+users take advantage of multiple social networks~\cite{twitter,xpost}.  That is
+not to say that all users have the same tolerance or even need for multiple
+explicit identities: in fact many users may be exclusively task-oriented and
+use the Internet with specific tasks in mind rather than for social interaction
+or exploratory surfing\footnote{Even these users are subject to building
+implicit identities through the use of tracking techniques, however.}.
 
-\subsection{Inferring contextual identities}
-Accurately detecting the user's current contextual identity, whether
-heuristically or through asking the user, is paramount to helping the user
-manage it.  Although a user may subconsciously be aware of their contextual
-identities, expecting users to enumerate their identities and manually curate
-them is probably too burdensome. Firefox has a Profile Manager, but it is so
-difficult to use that it will be removed.\footnote{See
-\url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}.}
-
-Tang et al.~show that most people do not take the time to create labels and
-maintain friend lists~\cite{tang}. However, the same authors show how to use
+Although a user may subconsciously be aware of their contextual identities,
+expecting users to enumerate their identities and manually curate them is
+probably too burdensome. Firefox has a Profile Manager, but it is so difficult
+to use that it will be removed.\footnote{See
+\url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}.} Tang et
+al.~show that most people do not take the time to create labels and maintain
+friend lists~\cite{tang}. However, the same authors show how to use
 heterogeneous networks to infer relationship types (e.g., manager-subordinate)
 though the graph itself is unlabeled.
 
-It may also be possible to infer tasks from the user's activity. For example,
-the \texttt{about:profile} Firefox extension uses the Open Directory Project
-and Alexa to categorize URLs that the user has visited~\cite{aboutprofile}.
+Further research is required to determine what constitutes a contextual
+identity. The contextual integrity model from Barth et al.~does not capture
+these notions adequately.
+
+(This is weak)
+If users' contextual identities are primarily task oriented, it may be
+possible to infer tasks from the user's activity. For example, the
+\texttt{about:profile} Firefox extension uses the Open Directory Project and
+Alexa to categorize URLs that the user has visited~\cite{aboutprofile}.
 
 \subsection{Automatic mitigations for information leakage}
 One can categorize a user's contextual identities and prevent information
