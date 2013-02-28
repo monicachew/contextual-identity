@@ -22,9 +22,10 @@
 
 \title{Contextual Identity: Towards Usable Privacy}
 
-\author{Monica Chew,Sid Stamm\\
-\tt{\{mmc,sid\}@mozilla.com}}
-%\institute{Mozilla}
+\author{\IEEEauthorblockN{Monica Chew, Sid Stamm}
+\IEEEauthorblockA{Mozilla\\
+\tt{\{mmc, sid\}@mozilla.com}}
+}
 \maketitle
 
 \begin{abstract}
@@ -32,30 +33,42 @@ We examine \textit{contextual identity}, a notion that individuals reveal
 different aspects of themselves depending on context. At any given time, they
 may act as a friend, relative, spouse, co-worker, aquaintance, or stranger. We
 analyze contextual identity from the perspective of user choice and control,
-survey contextual identity violations, suggest possible mitigations, and
-propose new resesarch directions to empower users to have better control over their contextual identities.
+survey contextual identity violations, and propose new resesarch directions to
+empower users to have better control over their contextual identities.
 \end{abstract}
+
 \section{Introduction}
 \begin{quote}I am large, I contain multitudes. --- Walt Whitman,
 \begin{em}Song of Myself\end{em} \end{quote}
 
 The desire for spontaneous, positive human interaction often requires sharing
 personal information. Sharing information can obviously lead to loss of
-privacy, but the act of sharing alone does not negate expectation of privacy~\cite{boyd2}.
-Helen Nissenbaum has long argued that privacy violations come not from the
-simple sharing of personal information, but rather from sharing that
-information in a way that violates social norms, or in the wrong
+privacy, but the act of sharing alone does not negate expectation of
+privacy~\cite{boyd2}.  Helen Nissenbaum has long argued that privacy violations
+come not from the simple sharing of personal information, but rather from
+sharing that information in a way that violates social norms, or in the wrong
 context~\cite{nissenbaum}.
 
-\begin{verbatim}
-NEED NEW EXAMPLE
-gay teen joins facebook group
-megan meier
-amanda todd
-tyler clementi
-http://www.sync-blog.com/sync/2012/10/gay-students-outed-by-facebook-privacy-loophole.html
+We consider it a contextual identity violation when
+multiple contextual identities are linked without the user's permission, or the
+user cannot control which contextual identity is presented to a given audience.
+
+Lesbian, gay, bisexual, and transgendered youth are a prime example of this.
+Access to support is crucial for LGTB-identified youth who are at higher risk
+for bullying and suicide than non-LGTB youth, and much of that support is only
+accessible through the Internet in socially conservative areas~\cite{hrc}. In
+2011 Bobbi Duncan and Taylor McCormick, two students at the University of Texas
+at Austin, were inadvertantly outed when their choir director added them to a
+Facebook group for Queer Chorus~\cite{fowler}. Even though both students had
+blocked their parents from seeing any personal posts revealing their sexuality,
+because Queer Chorus is a public group Facebook published notifications to
+Duncan's and McCormick's friends, including their parents. Duncan later
+attempted suicide~\cite{duncan}.
+
+\begin{comment}
+zuckerberg on "having multiple identities is dishonest"
 http://books.google.ca/books?id=RRUkLhyGZVgC&pg=PA199&lpg=PA199&dq=%22The+days+of+you+having+a+different+image+for+your+work+friends+or+co-workers+and+for+the+other+people+you+know+are+probably+coming+to+an+end+pretty+quickly,%22&source=bl&ots=LRUZf_pd9m&sig=oHHi0qhlHh9prk94gCQFXItjGIg&hl=en&sa=X&ei=ma19UIOhAdOEqQHE2oCADA&ved=0CD8Q6AEwBA#v=onepage&q=%22The%20days%20of%20you%20having%20a%20different%20image%20for%20your%20work%20friends%20or%20co-workers%20and%20for%20the%20other%20people%20you%20know%20are%20probably%20coming%20to%20an%20end%20pretty%20quickly%2C%22&f=false
-\end{verbatim}
+\end{comment}
 
 In offline environments, managing contextual identities is more intuitive than
 in online environments. There are cues to help you determine where you are,
@@ -65,7 +78,8 @@ also true that in offline environments, humans don't have perfect memories and
 will eventually forget.  However, with the advent of increasingly vast
 searching, indexing, and archiving capabilities, one cannot rely on forgetting
 in online environments~\cite{delete}. Managing contextual identities
-online has become increasingly difficult and fraught with mistakes.
+online has become increasingly difficult and fraught with mistakes; we must
+provide users with better tools to control their contextual identities.
 
 \section{Related Work}
 
@@ -98,34 +112,31 @@ context and making information discoverable can lead to user distress, even if
 the information was previously public, but not easily
 discoverable~\cite{boyd1,chew,nissenbaum}.
 
-Although network inference and merging attacks are very powerful, at the
-current time they require a level of expertise and resources not available to
-most people. A brief survey of social networking advice reveals that the major
-causes of concern come not from a dedicated social graph expert, but people
-close to the user: friends, family, and co-workers~\cite{fbtips2,fbtips1}.
-Surveys conducted by Wang et al.~show that typical regrets from posting on
-Facebook stem almost exclusively from fear of negative interactions with people
-that the user knows~\cite{wang}. The consequences of these negative
-interactions can lead to loss of employment or breaking personal relationships.
-Most previous privacy research has focused on distant adversaries, where the
-bad actor is a behavioral tracking service, state agent or unknown
-eavesdropper; in contrast, we assert that users care more about their
-interactions with others close to them.
+Evidence suggests that users' major privacy concerns come from people the user
+knows: friends, family, and co-workers~\cite{fbtips2,fbtips1}.  Surveys
+conducted by Wang et al.~suggest that typical regrets from posting on Facebook
+stem almost exclusively from fear of negative interactions with people that the
+user knows~\cite{wang}. The consequences of these negative interactions can
+lead to loss of employment or breaking personal relationships.  Most previous
+privacy research has focused on distant adversaries, where the bad actor is a
+behavioral tracking service, state agent or unknown eavesdropper; in contrast,
+we assert that users care more about their interactions with others close to
+them.
 
 \section{Contextual identity violations}
 \label{sec:examples}
 \subsection{Redistributing information out of context}
 Re-distributing information out of its original context often leads to
 embarrassment~\cite{nissenbaum}.  In November 2007, Facebook Beacon allowed
-third-party sites to publish purchases, travel bookings, movie rentals and more to the
-user's activity stream.  Because of poor opt-out and lack of visibility into
-what was being published, user outcry was immediate~\cite{mccarthy,nakashima}.
-In December 2007, Google Reader exposed RSS feeds of user-marked news stories
-to the user's Google Talk contacts, which includes everyone
-with whom a user has chatted whether they be co-workers, supervisors, or
-friends. Although this feed was always public, prior to this launch it was not
-discoverable, leading to a bad experience for many users~\cite{helft}. In
-February 2010, Google Buzz launched, a product that
+third-party sites to publish purchases, travel bookings, movie rentals and more
+to the user's activity stream.  Because of poor opt-out and lack of visibility
+into what was being published, user outcry was
+immediate~\cite{mccarthy,nakashima}.  In December 2007, Google Reader exposed
+RSS feeds of user-marked news stories to the user's Google Talk contacts, which
+includes everyone with whom a user has chatted whether they be co-workers,
+supervisors, or friends. Although this feed was always public, prior to this
+launch it was not discoverable, leading to a bad experience for many
+users~\cite{helft}. In February 2010, Google Buzz launched, a product that
 exposed the user's most frequent Gmail and Google Talk contacts and their
 publicly available (through previously less discoverable) news and photos.  The
 combination of exposing contacts (which could include abusive ex-husbands,
@@ -133,9 +144,9 @@ co-workers, and friends), as well as aggressively linking photos and news
 items, resulted in a huge backlash~\cite{fugitivus,buzz}. In September 2012,
 Facebook imported old wall posts from 2008 into the new Timeline interface.
 Although wall posts were always visible from profile pages, the new Timeline
-interface brought old wall posts which users used to treat as private
-messages, before the advent of ``Like'' and comment buttons, to the attention
-of an audience that the user never anticipated~\cite{timeline}.
+interface brought old wall posts which users used to treat as private messages,
+before the advent of ``Like'' and comment buttons, to the attention of an
+audience that the user never anticipated~\cite{timeline}.
 
 \subsection{Unsatisfiable policies}
 \label{sec:policies}
@@ -171,8 +182,7 @@ from this policy or design error~\cite{browserid,oauth}, giving a user better
 control over which contextual identity to assert.
 
 \subsection{User interface errors}
-Even in the absence of changes made by service providers to re-contextualize
-personal information, it is all too easy for users to broadcast information to
+It is all too easy for users to broadcast information to
 an unintended audience. This phenomenon is so common on Twitter that it has its
 own name, ``DM fail'', or Direct Message fail: when the user posts a public
 message instead of a private, direct message. Representative Anthony Weiner was
@@ -187,23 +197,25 @@ it is common to have multiple accounts for personal and business use.
 KitchenAid, Chrysler, and Google are three companies whose employees have
 made this mistake in the past year~\cite{kitchenaid,chrysler,yegge}.
 
-\subsection{Third party tracking}
-\label{sec:tracking}
-Even if a user does not participate in social networks, they are still subject
-to tracking by virtue of browsing the web. Third-party cookies, flash cookies,
-web bugs, device fingerprinting, geolocation, history sniffing and more are
-techniques that a dedicated third party could use to collect browsing history
-and link contextual identities through correlation of tasks.
+\section{Research directions}
+We propose new research directions based on the following questions.
+\begin{itemize}
+\item How do users think about identity?
+\item What are users already doing to preserve contextual identities?
+\item What tasks or topics do users find embarrassing?
+\end{itemize}
 
-\section{Possible mitigations}
+plethora of cross posting software, too much damn syndication indicates that
+many users are on multiple platforms.
 
 \subsection{Inferring contextual identities}
 Accurately detecting the user's current contextual identity, whether
 heuristically or through asking the user, is paramount to helping the user
-manage it.
-Although a user may subconsciously be aware of their contextual identities,
-expecting users to enumerate their identities and manually curate them is
-probably too burdensome. Firefox has a Profile Manager, but it is so difficult to use that it will be removed.\footnote{See \url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}.}
+manage it.  Although a user may subconsciously be aware of their contextual
+identities, expecting users to enumerate their identities and manually curate
+them is probably too burdensome. Firefox has a Profile Manager, but it is so
+difficult to use that it will be removed.\footnote{See
+\url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}.}
 
 Tang et al.~show that most people do not take the time to create labels and
 maintain friend lists~\cite{tang}. However, the same authors show how to use
@@ -215,13 +227,13 @@ the \texttt{about:profile} Firefox extension uses the Open Directory Project
 and Alexa to categorize URLs that the user has visited~\cite{aboutprofile}.
 
 \subsection{Automatic mitigations for information leakage}
-Given a set of relationships and tasks, one can categorize a user's
-contextual identities and prevent information leakage between them.  For
-example, preventing third-party cookies from being read and set across task
-boundaries means that targeted ads for dating would not follow the user when
-visiting a technology news site. Knowing the user's current contextual identity
-also allows the browser to suppress URL bar suggestions that aren't relevant to
-that identity, protecting the user from both shoulder-surfing and distraction.
+One can categorize a user's contextual identities and prevent information
+leakage between them.  For example, preventing third-party cookies from being
+read and set across task boundaries means that targeted ads for dating would
+not follow the user when visiting a technology news site. Knowing the user's
+current contextual identity also allows the browser to suppress URL bar
+suggestions that aren't relevant to that identity, protecting the user from
+both shoulder-surfing and distraction.
 
 Privacy modes in Firefox, Chrome, Safari, and Opera are a good first step, but
 are no means a complete solution~\cite{ABBJ10}. There is no standard behavior
@@ -265,7 +277,7 @@ case of high-volume users, such a tool could incorporate sentiment analysis to
 aid the user in finding particularly problematic content.
 
 Profiles can be generated by user-supplied application-level data, but also
-implicitly through browsing via techniques in Section~\ref{sec:tracking}.
+implicitly through browsing via tracking techniques.
 Collusion is a tool for visualizing cookies~\cite{collusion}, in particular
 third-party cookies set by tracking sites which are typically ad networks.
 Once the user knows which sites are tracking them, they can choose to block
@@ -307,49 +319,12 @@ Much work has been done for visual verification of domain authenticity in the
 context of phishing, but not much has been done for visual verification of
 which user credentials are active~\cite{skins}.
 
-\section{How do users think about identity?}
-\subsection{Blushproof}
-\subsection{Cookie statistics}
-
-\section{Open problems}
-We are largely ignorant of the ways in which users think about contextual
-identity. Building usable software to manage contextual identity demands
-further research.
-
-The mitigations proposed in this work become more complex in the face of shared
-devices and overlapping identities. There are good reasons to want to intermix
-work and personal identities (increased exposure, serendipitous connections)
-and so many people use the same account for both personal and work reasons.
-
-Mobile growth is driving most internet growth, and much of that growth comes
-developing countries. The literature on how device sharing works in those
-markets is completely lacking. Managing contextual identities on shared devices
-promises to be a difficult problem.
-
-\section{Discussion}
+\section{Summary}
 People have multiple contextual identities. Sharing personal information in
 appropriate contexts fosters positive human interaction.  We hope that
 contextual identity will serve as a useful notion for developers to understand
 their users' privacy needs, and to develop tools that allow users to act in
 their contextual identities in a spontaneous, relaxed, and interesting way.
-
-\begin{comment}
-papers:
-expectation of privacy\cite{viegas}
-http://jcmc.indiana.edu/vol10/issue3/viegas.html
-
-danah boyd
-making sense of privacy and publicity: whose voice counts? does your child's
-teacher have a right to be public in her other roles online? does she have a
-right to be secular? religious? friend? lover? if you work for company X and
-you disagree with their policies, are you allowed to be public about
-that:?\cite{boyd2}
-
-close to you “stranger on a train” “stranger on a plane”
-first party regrets, third party regrets
-impossible to judge how big friends of friends
-
-\end{comment}
 
 \begin{comment}
 \section{Acknowledgements}
