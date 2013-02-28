@@ -201,9 +201,8 @@ made this mistake in the past year~\cite{kitchenaid,chrysler,yegge}.
 We propose new research directions based on the following questions.
 \begin{itemize}
 \item How do users think about identity?
-\item What can we infer about identity?
-\item What threat models (audiences, topics) are important to users?
-\item What are users already doing to preserve contextual identities?
+\item How do users manage identity?
+\item How can we improve tools for managing identity?
 \end{itemize}
 
 \subsection{How do users think about identity?}
@@ -221,6 +220,8 @@ use the Internet with specific tasks in mind rather than for social interaction
 or exploratory surfing\footnote{Even these users are subject to building
 implicit identities through the use of tracking techniques, however.}.
 
+\subsection{How do users manage identity?}
+\paragraph{Profile management}
 Although a user may subconsciously be aware of their contextual identities,
 expecting users to enumerate their identities and manually curate them is
 probably too burdensome. Firefox has a Profile Manager, but it is so difficult
@@ -231,25 +232,7 @@ friend lists~\cite{tang}. However, the same authors show how to use
 heterogeneous networks to infer relationship types (e.g., manager-subordinate)
 though the graph itself is unlabeled.
 
-Further research is required to determine what constitutes a contextual
-identity. The contextual integrity model from Barth et al.~does not capture
-these notions adequately.
-
-(This is weak)
-If users' contextual identities are primarily task oriented, it may be
-possible to infer tasks from the user's activity. For example, the
-\texttt{about:profile} Firefox extension uses the Open Directory Project and
-Alexa to categorize URLs that the user has visited~\cite{aboutprofile}.
-
-\subsection{Automatic mitigations for information leakage}
-One can categorize a user's contextual identities and prevent information
-leakage between them.  For example, preventing third-party cookies from being
-read and set across task boundaries means that targeted ads for dating would
-not follow the user when visiting a technology news site. Knowing the user's
-current contextual identity also allows the browser to suppress URL bar
-suggestions that aren't relevant to that identity, protecting the user from
-both shoulder-surfing and distraction.
-
+\paragraph{Private browsing mode}
 Privacy modes in Firefox, Chrome, Safari, and Opera are a good first step, but
 are no means a complete solution~\cite{ABBJ10}. There is no standard behavior
 for private browsing mode, and thus interaction with extensions, treatment of
@@ -258,6 +241,22 @@ different and serve different use cases. Depending on user desire, the threat
 model for using private browsing mode may be other household members, or it may
 be a service to which the user wants to limit cookie leakage.
 
+\subsection{How can we improve identity management tools?}
+If users' contextual identities are primarily task-oriented, it may be
+possible to infer tasks from the user's activity. For example, the
+\texttt{about:profile} Firefox extension uses the Open Directory Project and
+Alexa to categorize URLs that the user has visited~\cite{aboutprofile}.
+
+\paragraph{Mitigating information leaks}
+Given a user's contextual identities, we may be able to prevent information
+leakage between them.  For example, preventing third-party cookies from being
+read and set across task boundaries means that targeted ads for dating would
+not follow the user when visiting a technology news site. Knowing the user's
+current contextual identity also allows the browser to suppress URL bar
+suggestions that aren't relevant to that identity, protecting the user from
+both shoulder-surfing and distraction.
+
+\paragraph{Mitigating unwanted linkage}
 Another partial solution is to prompt the user when they're about to link
 multiple contextual identities through a federated login service. For example,
 Persona is the suite of tools that implements the BrowserID protocol, and it
