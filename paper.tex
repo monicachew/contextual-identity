@@ -68,9 +68,9 @@ http://books.google.ca/books?id=RRUkLhyGZVgC&pg=PA199&lpg=PA199&dq=%22The+days+o
 In offline environments, managing contextual identities is more intuitive than
 in online environments. There are cues to help you determine where you are,
 who your intended audience is, how many people will overhear you, and how
-likely your information is to be re-broadcast in a different context. It is
-also true that in offline environments, humans don't have perfect memories and
-will often eventually forget.  However, with the advent of increasingly vast
+likely your information is to be re-broadcast in a different context. 
+In offline environments, humans don't have perfect memories and
+will typically forget.  However, with the advent of increasingly vast
 searching, indexing, and archiving capabilities, one cannot rely on forgetting
 in online environments~\cite{delete}. Managing contextual identities
 online has become increasingly difficult and fraught with mistakes; we must
@@ -119,10 +119,9 @@ we assert that users care more about their interactions with others close to
 them.
 
 \section{Contextual identity violations}
-We consider it a contextual identity violation when
-multiple contextually-separate identities are linked without the user's
-permission, or when the user cannot select which contextual identity is
-presented to a given audience.
+We consider it a contextual identity violation when multiple identities are
+linked without user intent, or when the user cannot choose which contextual
+identity to assert.
 
 \label{sec:examples}
 \subsection{Redistributing information out of context}
@@ -206,6 +205,31 @@ We propose new research directions based on the following questions.
 \end{itemize}
 
 \subsection{How do users think about identity?}
+It is unlikely that the majority of users are consciously aware of having
+multiple contextual identities. Imagine two users at the opposite ends of the
+spectrum:
+\begin{itemize}
+\item A user who participates in no social networks, reads paper newspapers,
+uses the Internet for well-defined tasks (e.g., coordinating visits with
+friends over email, looking up restaurant reviews) but does not otherwise
+engage in discretionary browsing.
+\item A savvy user who is active on Facebook, Twitter, Instagram and has
+different posting levels, topics, and followers on each, maintains multiple
+email accounts and pseudonyms, is online multiple hours daily for both work and
+personal reasons. 
+\end{itemize}
+
+The second user may be much more aware of contextual identities, but even the
+first user would benefit from protection against contextual identity
+violations. For example, engaging in a long-term task such as house-buying
+often requires the construction of a contextual identity. The tasks associated
+with this identity have an externally imposed end date and may have long-lived
+side-effects, such as long-term cookies that reveal sensitive information
+(e.g., the neighborhood of the house purchase, income information derived from
+purchases, other demographic data). For contextual identities that have
+outlived their usefulness, users would benefit from destruction of side-effects
+such as cookie data.
+
 Users' contextual identities may be task-oriented, service-oriented,
 relationship-oriented, or guided by other principles. The long-time existence
 of support for multiple accounts in email clients suggests that many users have
@@ -221,6 +245,15 @@ or exploratory surfing\footnote{Even these users are subject to building
 implicit identities through the use of tracking techniques, however.}.
 
 \subsection{How do users manage identity?}
+\paragraph{Private browsing mode}
+Privacy modes in Firefox, Chrome, Safari, and Opera are a good first step, but
+are no means a complete solution~\cite{ABBJ10}. There is no standard behavior
+for private browsing mode, and thus interaction with extensions, treatment of
+cookies, history, and bookmarks upon entering and exiting this mode are
+different and serve different use cases. Depending on user desire, the threat
+model for using private browsing mode may be other household members, or it may
+be a service to which the user wants to limit cookie leakage.
+
 \paragraph{Profile management}
 Although a user may subconsciously be aware of their contextual identities,
 expecting users to enumerate their identities and manually curate them is
@@ -232,22 +265,13 @@ friend lists~\cite{tang}. However, the same authors show how to use
 heterogeneous networks to infer relationship types (e.g., manager-subordinate)
 though the graph itself is unlabeled.
 
-\paragraph{Private browsing mode}
-Privacy modes in Firefox, Chrome, Safari, and Opera are a good first step, but
-are no means a complete solution~\cite{ABBJ10}. There is no standard behavior
-for private browsing mode, and thus interaction with extensions, treatment of
-cookies, history, and bookmarks upon entering and exiting this mode are
-different and serve different use cases. Depending on user desire, the threat
-model for using private browsing mode may be other household members, or it may
-be a service to which the user wants to limit cookie leakage.
-
 \subsection{How can we improve identity management tools?}
 If users' contextual identities are primarily task-oriented, it may be
 possible to infer tasks from the user's activity. For example, the
 \texttt{about:profile} Firefox extension uses the Open Directory Project and
 Alexa to categorize URLs that the user has visited~\cite{aboutprofile}.
 
-\paragraph{Mitigating information leaks}
+\paragraph{Mitigating implicit linkage}
 Given a user's contextual identities, we may be able to prevent information
 leakage between them.  For example, preventing third-party cookies from being
 read and set across task boundaries means that targeted ads for dating would
@@ -256,7 +280,7 @@ current contextual identity also allows the browser to suppress URL bar
 suggestions that aren't relevant to that identity, protecting the user from
 both shoulder-surfing and distraction.
 
-\paragraph{Mitigating unwanted linkage}
+\paragraph{Mitigating explicit unwanted linkage}
 Another partial solution is to prompt the user when they're about to link
 multiple contextual identities through a federated login service. For example,
 Persona is the suite of tools that implements the BrowserID protocol, and it
@@ -266,18 +290,22 @@ as \texttt{about:profile} does, Persona could prompt the user when they're about
 to link the same email identifier to radically different contextual identities,
 such as ones for dating and professional use.
 
-\subsection{Expiring contextual identities}
-Oftentimes a user may have a long-term task, such as wedding planning or house
-buying, that requires constructing a contextual identity. The tasks associated
-with this identity have an externally imposed end date and may have long-lived
-side-effects, such as long-term cookies that reveal sensitive information
-(e.g., the neighborhood of the house purchase, income information derived from
-purchases, other demographic data). For contextual identities that have
-outlived their usefulness, users would benefit from destruction of side-effects
-such as cookie data.
+\paragraph{Controlling Information Flow}
+Sometimes a user might want to prevent mistakes from being made in the first
+place. If a user is concerned about a particular service provider, they can
+install an extension like Disconnect to disallow cookies from that provider
+unless they explicitly want to interact with that site~\cite{disconnect}.
+This type of tool (cookie blocker) helps users assert control over audience.
 
-\subsection{Recovering from Mistakes}
-\subsubsection{Auditing}
+Protocols like Do Not Track are also a good first step to solving this
+problem~\cite{dnt}. Although Do Not Track is unenforceable from the client
+side, it provides a clear signal to service providers and ad networks that the
+user does not want to be tracked. As adoption increases, ignoring this signal
+will lead to loss of reputation for service providers that explicitly act
+against their users' wishes, helping users assert control over the effects of
+their actions.
+
+\paragraph{Auditing}
 A major cause of user embarrassment is exposing information to the wrong
 audience, as illustrated in section~\ref{sec:examples}. A browser is in an
 ideal position to intermediate social network posts, aggregate them locally,
@@ -297,32 +325,16 @@ third-party cookies set by tracking sites which are typically ad networks.
 Once the user knows which sites are tracking them, they can choose to block
 cookies from those sites.
 
-\subsubsection{Remembering to Forget}
+\paragraph{Remembering to Forget}
 Humans don't have perfect memories, and perhaps social networks should not
 either~\cite{delete}. Many users already engage in manual auditing and deletion
 of old posts~\cite{fbtips2}. A better solution would be to build tools that let
 the user manage this more easily through an API: both Twitter and Facebook
-provide APIs for deletion\footnote{At the time of this writing, Google Plus
+provide APIs for post deletion\footnote{Google Plus
 offers a read-only API.}. One way to reduce the likelihood of linked contextual
 identities would be to provide applications that expire posts after some time.
 
-\subsection{Preventing Mistakes}
-\subsubsection{Controlling Information Flow}
-Sometimes a user might want to prevent mistakes from being made in the first
-place. If a user is concerned about a particular service provider, they can
-install an extension like Disconnect to disallow cookies from that provider
-unless they explicitly want to interact with that site~\cite{disconnect}.
-This type of tool (cookie blocker) helps users assert control over audience.
-
-Protocols like Do Not Track are also a good first step to solving this
-problem~\cite{dnt}. Although Do Not Track is unenforceable from the client
-side, it provides a clear signal to service providers and ad networks that the
-user does not want to be tracked. As adoption increases, ignoring this signal
-will lead to loss of reputation for service providers that explicitly act
-against their users' wishes, helping users assert control over the effects of
-their actions.
-
-\subsubsection{Visual reminders of context}
+\paragraph{Visual reminders of context}
 To mitigate privacy violations caused by poor user interfaces, the onus must be
 on software developers to provide sufficient visual cues of context. For
 example, many but not all Google products support multiple accounts. However,
