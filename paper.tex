@@ -89,17 +89,17 @@ acting in given roles, and works well for modeling privacy legislation such as
 HIPPA and COPPA. Two limitations of this work are that it does not
 model information where the subject involves more than one person, and it
 only takes the type of information into account rather than the content or tone
-of the information.  ``Bob told Alice that Charlie cooked a
+of the information. For example, ``Bob told Alice that Charlie cooked a
 delicious dinner'' is out of scope of the model.  In the context of social
 networks, information is rarely about a single person, and the tone of the
-message is as important to user effect as the content of the message.
+message is as important to user effect as the contents.
 
-Many authors have discovered attacks to link different contextual identities to
+Many authors have discovered methods to link different contextual identities to
 the same person. Narayanan and Shmatikov present a re-identification technique
 to merge anonymized social graphs from different networks and prove that
 user identifiers from Netflix and IMDB and Flickr and Twitter can be
 linked~\cite{narayanan1,narayanan2}. Lindamood et al.~and Mislove et al.~show
-how to infer previously undisclosed information from released social networking
+how to infer previously undisclosed information from public social networking
 data~\cite{lindamood,mislove}.
 
 Many authors have noted how re-broadcasting information information out of
@@ -119,9 +119,13 @@ we assert that users care more about their interactions with others close to
 them.
 
 \section{Contextual identity violations}
-We consider it a contextual identity violation when multiple identities are
-linked without user intent, or when the user cannot choose which contextual
-identity to assert.
+In this section we discuss three types of \textit{contextual identity
+violations}. We consider a contextual identity violation to be when multiple
+identities are linked without user intent, or when the user cannot choose which
+contextual identity to assert in a given situation. In these examples the user
+may not be conscious of what a contextual identity is: nevertheless each
+example illustrates a loss of user control over what aspects of self to
+reveal in a given context.
 
 \label{sec:examples}
 \subsection{Redistributing information out of context}
@@ -185,8 +189,8 @@ It is all too easy for users to broadcast information to
 an unintended audience. This phenomenon is so common on Twitter that it has its
 own name, ``DM fail'', or Direct Message fail: when the user posts a public
 message instead of a private, direct message. Representative Anthony Weiner was
-a victim of this mistake when he inadvertently sent compromising pictures of
-himself publicly~\cite{weiner}. Considering that this mistake requires
+a victim of this mistake when he inadvertently published compromising pictures
+of himself~\cite{weiner}. Considering that this mistake requires
 mistyping a single character (\texttt{@} instead of \texttt{d}), it's no
 surprise that DM failures are exceedingly common.
 
@@ -205,71 +209,107 @@ We propose new research directions based on the following questions.
 \end{itemize}
 
 \subsection{How do users think about identity?}
-It is unlikely that the majority of users are consciously aware of having
-multiple contextual identities. Imagine two users at the opposite ends of the
-spectrum:
+We hypothesize many users are not consciously aware of having multiple
+contextual identities. In order to develop tools to help users, we need to
+understand users' mental models of identity and how information is shared on
+the Internet. For computer scientists, authentication is tied to identity, and
+even in the absence of authentication, using the same device over time
+implicitly creates an identity through tracking techniques and local
+information. However, these points are far from obvious to a typical user,
+especially for users who don't distinguish the web application from the
+browser, from the operating system, or from the device.
+
+The computer science community must free itself from software-specific
+notions of identity if we are to help users to whom the very concept of
+identity is an enigma. To start understanding our users' mental models,
+one might start with the questions:
+
 \begin{itemize}
-\item A user who participates in no social networks, reads paper newspapers,
-uses the Internet for well-defined tasks (e.g., coordinating visits with
-friends over email, looking up restaurant reviews) but does not otherwise
-engage in discretionary browsing.
-\item A savvy user who is active on Facebook, Twitter, Instagram and has
-different posting levels, topics, and followers on each, maintains multiple
-email accounts and pseudonyms, is online multiple hours daily for both work and
-personal reasons. 
+\item How is identity represented online?
+\item Is your identity tied to the device you are using?
+\item If you check your mail, read news, log on to a social network at a
+computer at the public library, does that affect your identity?
+\item What does it mean to share devices? If you lend your tablet to your
+sister, is she representing herself, or you?
+\item If you register for an account on a service, do you expect that to have
+an influence on your online identity? What if you never use that account again?
+\item If you visit a website, do you expect that to have an influence on your
+browsing experience or online identity? If so, for how long?
+\item Which parts of your online identity do you expect to be visible to
+your housemates, friends, relatives, or employers?
+\item Which parts of your identity do you want to share with whom?
+\item Which parts of your identity do you want to keep secret from whom?
+\item How does your identity change over time?
 \end{itemize}
 
-The second user may be much more aware of contextual identities, but even the
-first user would benefit from protection against contextual identity
-violations. For example, engaging in a long-term task such as house-buying
-often requires the construction of a contextual identity. The tasks associated
-with this identity have an externally imposed end date and may have long-lived
-side-effects, such as long-term cookies that reveal sensitive information
-(e.g., the neighborhood of the house purchase, income information derived from
-purchases, other demographic data). For contextual identities that have
-outlived their usefulness, users would benefit from destruction of side-effects
-such as cookie data.
-
-Users' contextual identities may be task-oriented, service-oriented,
-relationship-oriented, or guided by other principles. The long-time existence
-of support for multiple accounts in email clients suggests that many users have
-multiple email identifiers, which could be considered as a proxy for identity
-if tied to service accounts. Similarly, data suggests that a large minority of
-Twitter users have multiple Twitter accounts, and the plethora of cross-posting
-or syndication software from one social network to another suggests that many
-users take advantage of multiple social networks~\cite{twitter,xpost}.  That is
-not to say that all users have the same tolerance or even need for multiple
-explicit identities: in fact many users may be exclusively task-oriented and
-use the Internet with specific tasks in mind rather than for social interaction
-or exploratory surfing\footnote{Even these users are subject to building
-implicit identities through the use of tracking techniques, however.}.
+danah boyd has done excellent work surveying youth and social networks, and Pew
+Internet is a good source for self-reported phone surveys on privacy and social
+media, but there is otherwise a dearth of research in these
+areas~\cite{boyd,pew1,pew2,pew3}.
 
 \subsection{How do users manage identity?}
+
+Users who are aware of having multiple identities engage in the following
+identity management techniques.
+
+\paragraph{Multiple accounts}
+The long-time existence of support for multiple accounts in email clients
+suggests that many users have multiple email identifiers, which could be
+considered as a proxy for identity if tied to service accounts. Similarly, data
+suggests that a large minority of Twitter users have multiple Twitter accounts,
+and the plethora of cross-posting or syndication software from one social
+network to another suggests that many users take advantage of multiple social
+networks~\cite{twitter}.
+\begin{comment}
+That is not to say that all users have the same
+tolerance or even need for multiple explicit identities: in fact many users may
+be exclusively task-oriented and use the Internet with specific tasks in mind
+rather than for social interaction or exploratory surfing\footnote{Even these
+users are subject to building implicit identities through the use of tracking
+techniques, however.}.
+\end{comment}
+
+\paragraph{Auditing}
+Wang et.~al suggest that common techniques for handling regret online include
+manual deletion of regrettable posts, self-censoring or delaying
+posts that they predict might bring regret~\cite{wang}.
+
 \paragraph{Private browsing mode}
-Privacy modes in Firefox, Chrome, Safari, and Opera are a good first step, but
-are no means a complete solution~\cite{ABBJ10}. There is no standard behavior
-for private browsing mode, and thus interaction with extensions, treatment of
-cookies, history, and bookmarks upon entering and exiting this mode are
-different and serve different use cases. Depending on user desire, the threat
-model for using private browsing mode may be other household members, or it may
-be a service to which the user wants to limit cookie leakage.
+Private browsing mode exists in all major browsers, but are not a complete
+solution~\cite{ABBJ10}. There is no standard behavior for private browsing
+mode, and interaction with extensions, treatment of cookies, history, and
+bookmarks upon entering and exiting this mode are different and serve different
+use cases. For example, entering private browsing in Firefox does not clear
+cookies, history, or other session data; session data is cleared on exiting
+private browsing mode. In contrast, incognito mode in Chrome makes previous
+session state unavailable and clears new session state on exit; this mode
+may be preferable as a ``Guest mode'' where the device owner does not want the
+guest to either view or pollute existing state.
 
 \paragraph{Profile management}
 Although a user may subconsciously be aware of their contextual identities,
 expecting users to enumerate their identities and manually curate them is
-probably too burdensome. Firefox has a Profile Manager, but it is so difficult
-to use that it will be removed.\footnote{See
-\url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}.} Tang et
-al.~show that most people do not take the time to create labels and maintain
-friend lists~\cite{tang}. However, the same authors show how to use
-heterogeneous networks to infer relationship types (e.g., manager-subordinate)
-though the graph itself is unlabeled.
+probably too burdensome. Firefox has a Profile Manager, but it is so unusable
+that it will be removed.\footnote{See
+\url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}.}
+
+\paragraph{Cookie blockers}
+Disconnect and ShareMeNot are browser extensions to disallow interacting with
+service providers like Google and Facebook unless users explicitly choose to
+interact with that site~\cite{disconnect,franzi}.
 
 \subsection{How can we improve identity management tools?}
+\paragraph{Task inference}
 If users' contextual identities are primarily task-oriented, it may be
 possible to infer tasks from the user's activity. For example, the
 \texttt{about:profile} Firefox extension uses the Open Directory Project and
 Alexa to categorize URLs that the user has visited~\cite{aboutprofile}.
+
+\paragraph{Relationship inference}
+Tang et al.~show that most people do not take the time to create labels and
+maintain friend lists~\cite{tang}. However, the same authors show how to use
+heterogeneous networks to infer relationship types (e.g., manager-subordinate)
+though the graph itself is unlabeled.
 
 \paragraph{Mitigating implicit linkage}
 Given a user's contextual identities, we may be able to prevent information
@@ -280,7 +320,7 @@ current contextual identity also allows the browser to suppress URL bar
 suggestions that aren't relevant to that identity, protecting the user from
 both shoulder-surfing and distraction.
 
-\paragraph{Mitigating explicit unwanted linkage}
+\paragraph{Mitigating explicit linkage}
 Another partial solution is to prompt the user when they're about to link
 multiple contextual identities through a federated login service. For example,
 Persona is the suite of tools that implements the BrowserID protocol, and it
@@ -291,41 +331,39 @@ to link the same email identifier to radically different contextual identities,
 such as ones for dating and professional use.
 
 \paragraph{Controlling Information Flow}
-Sometimes a user might want to prevent mistakes from being made in the first
-place. If a user is concerned about a particular service provider, they can
-install an extension like Disconnect to disallow cookies from that provider
-unless they explicitly want to interact with that site~\cite{disconnect}.
-This type of tool (cookie blocker) helps users assert control over audience.
-
-Protocols like Do Not Track are also a good first step to solving this
-problem~\cite{dnt}. Although Do Not Track is unenforceable from the client
-side, it provides a clear signal to service providers and ad networks that the
-user does not want to be tracked. As adoption increases, ignoring this signal
-will lead to loss of reputation for service providers that explicitly act
-against their users' wishes, helping users assert control over the effects of
-their actions.
+Do Not Track is an HTTP request header that signals to the website that the
+user does not want to be tracked~\cite{dnt}. Although Do Not Track is
+unenforceable from the client side, service providers who ignore signal will
+lose reputation by acting against their users' explicit wishes.
 
 \paragraph{Auditing}
 A major cause of user embarrassment is exposing information to the wrong
-audience, as illustrated in section~\ref{sec:examples}. A browser is in an
-ideal position to intermediate social network posts, aggregate them locally,
-and present them to the user when they desire to audit their digital footprint.
-For example, a user could see all of the comments and posts they made in the
-last week and redact content that is sensitive or too negative, a frequent cause
-of regret~\cite{wang}.  Although this approach does not help when the service
-provider decides to change the audience on the user's behalf, auditing gives
-the user a good opportunity to review posts that might cause regrets. In the
-case of high-volume users, such a tool could incorporate sentiment analysis to
-aid the user in finding particularly problematic content.
+audience. A browser is in an ideal position to intermediate social network
+posts, aggregate them locally, and present them to the user when they desire to
+audit their digital footprint.  For example, a user could see all of the
+comments and posts they made in the last week and redact content that is
+sensitive or too negative, a frequent cause of regret~\cite{wang}.  Although
+this approach does not help when the service provider decides to change the
+audience on the user's behalf, auditing gives the user a good opportunity to
+review posts that might cause regrets. In the case of high-volume users, such a
+tool could incorporate sentiment analysis to aid the user in finding
+particularly problematic content.
 
+\paragraph{Implicit identity generation}
 Profiles can be generated by user-supplied application-level data, but also
-implicitly through browsing via tracking techniques.
-Collusion is a tool for visualizing cookies~\cite{collusion}, in particular
-third-party cookies set by tracking sites which are typically ad networks.
-Once the user knows which sites are tracking them, they can choose to block
-cookies from those sites.
+implicitly through browsing via tracking techniques.  Collusion is a tool for
+visualizing cookies~\cite{collusion}, in particular third-party cookies set by
+tracking sites which are typically ad networks.  Once the user knows which
+sites are tracking them, they can choose to block cookies from those sites.
 
-\paragraph{Remembering to Forget}
+\paragraph{Visual reminders of context}
+To mitigate privacy violations caused by poor user interfaces, the software
+must provide sufficient visual cues of context. For example, many but not all
+Google products support multiple accounts. However, the visual cue to indicate
+which account is active is a small, easy to ignore text name at the top right
+of the page.
+
+\paragraph{Expiring posts}
 Humans don't have perfect memories, and perhaps social networks should not
 either~\cite{delete}. Many users already engage in manual auditing and deletion
 of old posts~\cite{fbtips2}. A better solution would be to build tools that let
@@ -334,16 +372,15 @@ provide APIs for post deletion\footnote{Google Plus
 offers a read-only API.}. One way to reduce the likelihood of linked contextual
 identities would be to provide applications that expire posts after some time.
 
-\paragraph{Visual reminders of context}
-To mitigate privacy violations caused by poor user interfaces, the onus must be
-on software developers to provide sufficient visual cues of context. For
-example, many but not all Google products support multiple accounts. However,
-the visual cue to indicate which account is active is a small, easy to ignore
-text name at the top right of the page.
-
-Much work has been done for visual verification of domain authenticity in the
-context of phishing, but not much has been done for visual verification of
-which user credentials are active~\cite{skins}.
+\paragraph{Expiring contextual identities}
+Engaging in a long-term task such as house-buying
+often requires the construction of a contextual identity. The tasks associated
+with this identity have an externally imposed end date and may have long-lived
+side-effects, such as long-term cookies that reveal sensitive information
+(e.g., the neighborhood of the house purchase, income information derived from
+purchases, other demographic data). For contextual identities that have
+outlived their usefulness, users would benefit from destruction of side-effects
+such as cookie data.
 
 \section{Summary}
 People have multiple contextual identities. Sharing personal information in
@@ -358,10 +395,9 @@ The authors thank
 Lucas Adamski
 Ben Adida
 Mike Connor
-Ed Lee
+Chris Karlof
 \end{comment}
 
-%Convert to IEEE?
 \bibliographystyle{plain}
 \bibliography{paper}
 \end{document}
