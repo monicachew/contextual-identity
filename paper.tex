@@ -126,7 +126,7 @@ them.
 In this section we discuss three types of \textit{contextual identity
 violations}. We consider a contextual identity violation to be when multiple
 identities are linked without user intent, or when the user cannot choose which
-contextual identity to assert in a given situation. In these examples the user
+identity to assert in a given context. In these examples the user
 may not be conscious of what a contextual identity is: nevertheless each
 example illustrates a loss of user control over what aspects of self to
 reveal in a given context.
@@ -160,26 +160,25 @@ audience that the user never anticipated~\cite{timeline}.
 Some service providers have policies which preclude isolating multiple
 contextual identities. For example, Facebook and Google have a ``Real Names''
 policy, which requires users to register for accounts with their legal
-name~\cite{fb_names,google_names}.  These policies ignore that
+name\footnote{Facebook's policy: \url{http://www.facebook.com/help/?page=258984010787183}, Google's policy: \url{http://support.google.com/plus/bin/answer.py?hl=en&answer=1228271}}.
+%\cite{fb_names,google_names}.  
+These policies ignore that
 community-building happens in many different contexts, that users have many
 legitimate reasons for presenting different identities in different contexts,
 and that users don't necessarily want those identities to be linked. For
 example, disallowing avatar handles as a primary identifier makes building a
-gaming community difficult.  Linking a gaming identity to a professional
-identity has already caused problems for 2012 Maine Senate candidate and World
-of Warcraft gamer Colleen Lachowicz~\cite{maine}.
-
-It is impossible for users who want to isolate multiple contextual identities
-to participate in these networks without violating the terms of service.  The
-``Real Names'' policy prohibits users from asserting control over their
-identity.
+gaming community difficult. % Linking a gaming identity to a professional
+%identity has already caused problems for 2012 Maine Senate candidate and World
+%of Warcraft gamer Colleen Lachowicz~\cite{maine}.
+It is impossible to isolate multiple contextual identities in these networks
+without violating the terms of service.
 
 Even worse, many of these providers now serve as login platforms for external
 sites. For example, Facebook Connect allows third-party websites to
 authenticate users using their Facebook identity~\cite{fb_connect}.  Because it
 is against the terms of service to have multiple Facebook accounts, using
-Facebook Connect has the unwanted side-effect of linking multiple contextual
-identities across multiple sites.
+Facebook Connect may have the unwanted side-effect of linking multiple
+contextual identities across multiple sites.
 
 Other federated login systems have support for multiple identifiers, but this
 feature can be poorly implemented or difficult to discover, leading to low use.
@@ -204,7 +203,7 @@ KitchenAid, Chrysler, and Google are three companies whose employees have
 made this mistake in the past year~\cite{kitchenaid,chrysler,yegge}.
 
 \section{Research directions}
-We propose new research directions based on the following questions.
+We propose new research directions based on the following questions:
 \begin{itemize}
 \item How do users think about identity?
 \item How do users manage identity?
@@ -243,21 +242,18 @@ browsing experience or online identity? If so, for how long?
 your housemates, friends, relatives, or employers?
 \item Which parts of your online identity do you expect to be visible to
 websites you use? What about websites you don't use?
-\item Which parts of your identity do you want to share with whom?
-\item Which parts of your identity do you want to keep secret from whom?
+\item Which parts of your identity do you want to share or keep secret, and from whom?
 \item How does your identity change over time?
 \end{itemize}
 
-danah boyd's work surveying youth and social networks is excellent, and Pew
-Internet is a good source for self-reported phone surveys on privacy and social
-media, but there is otherwise a dearth of research in these
-areas~\cite{boyd,pew1,pew2,pew3}.
-% digital natives is related but not exactly
+Pew Internet is a good source for phone survey data on privacy and social
+media and danah boyd's work on youth and social media is excellent, but there
+is otherwise a dearth of research in these areas~\cite{boyd,pew1,pew2,pew3}.
 
 \subsection{How do users manage identity?}
 
 Users who are aware of having multiple identities engage in the following
-identity management techniques.
+techniques to separate, link, and curate identities.
 
 \subsubsection{Separating identities}
 
@@ -292,31 +288,35 @@ GPS and mapping software are probably more often used in mobile devices) and
 some may be due to policy (e.g., personal browsing is limited to a personal
 laptop). Using multiple devices implicitly creates multiple browser states and
 thus multiple identities.  However, these identities may still be linked
-through authentication data or other techniques~\cite{aol}.
+through authentication data or other techniques.%~\cite{aol}
 
 \paragraph{Multiple profiles}
 
-Using multiple browsers forces separation between cookies, history, builtin
+Using multiple browsers forces separation between cookies, history, built-in
 password managers, and other local storage. However, several browsers support
-separation of profile data natively. Firefox has a Profile Manager, but it is
-so unusable that it will be removed.\footnote{See
-\url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}.} Google Chrome
-supports multiple profiles\footnote{Manage multiple users on Chrome:
-\url{https://support.google.com/chrome/bin/answer.py?hl=en&answer=2364824}}. In
-both cases, the threat model does not include users with malicious intent in
+separation of profile data natively. Firefox 
+%\url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}.}
+and Chrome support multiple profiles, though neither of these is very
+discoverable or easy to use.\footnote{Chrome: \url{https://support.google.com/chrome/bin/answer.py?hl=en&answer=2364824}, Firefox:
+\url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}}
+The threat model does not include users with malicious intent in
 the same household.
 
 \paragraph{Private browsing mode}
-Private browsing mode exists in all major browsers, but are not a complete
-solution~\cite{ABBJ10}. There is no standard behavior for private browsing
-mode: interaction with extensions, treatment of cookies, history, and
+Private browsing mode exists in all major browsers, but has no standard
+behavior~\cite{ABBJ10}.
+Interaction with extensions, treatment of cookies, history, and
 bookmarks upon entering and exiting are different across browsers.
+\begin{comment}
 For example, entering private browsing in Firefox does not clear
 cookies, history, or other session data; session data is cleared on exiting
 private browsing mode. In contrast, incognito mode in Chrome makes previous
 session state unavailable and clears new session state on exit; this mode
 may be preferable as a ``Guest mode'' where the device owner does not want the
-guest to either view or pollute existing state. L
+guest to either view or pollute existing state.
+\end{comment}
+Similar to multiple profiles, private browsing mode is not secure against local
+attacks.
 
 \paragraph{Cookie blockers}
 Disconnect and ShareMeNot are browser extensions to disallow interacting with
@@ -326,18 +326,13 @@ visualizing cookies~\cite{collusion}, in particular third-party cookies set by
 tracking sites which are typically ad networks.  Once the user knows which
 sites are tracking them, they can choose to block cookies from those sites.
 
-\paragraph{Controlling Information Flow}
-Do Not Track is an HTTP request header that signals to the website that the
-user does not want to be tracked~\cite{dnt}. Although Do Not Track is
-unenforceable from the client side, service providers who ignore signal
-lose reputation by acting against their users' explicit wishes.
-
-\paragraph{Service settings} Service configurations such as Facebook friends,
-Google circles and privacy settings are intended for users to self-manage
-privacy and identity. However, shifting privacy settings and complex,
-interacting features make these configurations unpredictable for many users.
-
 \subsubsection{Linking identities}
+
+For many users, the natural separation that occurs when creating multiple
+accounts, using multiple browsers and devices is a drawback, not a benefit.
+These users want fewer contextual identities and use the following techniques
+to merge them.
+
 \paragraph{Linking between profiles}
 
 -link from fb profile to blog
@@ -349,14 +344,33 @@ interacting features make these configurations unpredictable for many users.
 - picl
 - xmarks
 
-\subsection{How can we improve identity management tools?}
-\paragraph{Task inference}
-If users' contextual identities are primarily task-oriented, it may be
-possible to infer tasks from the user's activity. For example, the
-\texttt{about:profile} Firefox extension uses the Open Directory Project and
-Alexa to categorize URLs that the user has visited~\cite{aboutprofile}.
+\subsubsection{Curating identities}
 
-\paragraph{Relationship inference}
+\paragraph{Service settings} Service configurations such as Facebook friends,
+Google circles and privacy settings are intended for users to self-manage
+privacy and identity. However, shifting privacy settings and complex,
+interacting features make these configurations unpredictable for many users.
+
+\paragraph{Auditing} Wang et. al suggest that common techniques
+for handling regret online include manual deletion of regret-
+table posts, self-censoring or delaying posts that they predict
+might bring regret~\cite{wang}. Pew Internet reports that 57\% of Internet
+users periodically search for themselves to manage reputation, with young
+adults being the most active~\cite{pew3}.
+
+\subsection{How can we improve identity management tools?}
+
+Service providers are highly incentivized to make linking identities easy, so
+we concentrate on tools to help separate and curate identities.
+
+\begin{comment}
+\paragraph{Automatically inferring identities}
+A contextual identity may be based on tasks and relationships.
+Browsing activity is a rich source of information for inferring tasks.  For
+example, the \texttt{about:profile} Firefox extension uses the Open Directory
+Project and Alexa to categorize URLs that the user has
+visited~\cite{aboutprofile}.
+
 Tang et al.~show that most people do not take the time to create labels and
 maintain friend lists~\cite{tang}. However, the same authors show how to use
 heterogeneous networks to infer relationship types (e.g., manager-subordinate)
@@ -370,44 +384,29 @@ not follow the user when visiting a technology news site. Knowing the user's
 current contextual identity also allows the browser to suppress URL bar
 suggestions that aren't relevant to that identity, protecting the user from
 both shoulder-surfing and distraction.
+\end{comment}
 
-\paragraph{Mitigating explicit linkage}
-Federated login services can prevent linking contextual identities to the same
-user identifier. For example, Persona is the suite of tools that implements the
-BrowserID protocol, and it supports multiple email
-identifiers~\cite{browserid}.  If the type of service is known, Persona could
-prevent the user from associating the same email identifier to radically
-different contextual identities, such as ones for dating and professional use.
+\paragraph{Mitigating explicit linkage} Federated login services can prevent
+linking contextual identities to the same user identifier.  For example, a
+federated login service that supported multiple identifiers could prevent the
+user from associating the same identifier to radically different
+contextual identities, such as ones for dating and professional use.
 
 \paragraph{Auditing}
-(needs rewrite)
-A major cause of user embarrassment is exposing information to the wrong
-audience. A browser is in an ideal position to intermediate social network
+A browser is in an ideal position to intermediate social network
 posts, aggregate them locally, and present them to the user when they desire to
 audit their digital footprint.  For example, a user could see all of the
 comments and posts they made in the last week and redact content that is
-sensitive or too negative, a frequent cause of regret~\cite{wang}.  Although
-this approach does not help when the service provider decides to change the
-audience on the user's behalf, auditing gives the user a good opportunity to
-review posts that might cause regrets. In the case of high-volume users, such a
-tool could incorporate sentiment analysis to aid the user in finding
+sensitive or too negative, a frequent cause of regret~\cite{wang}. 
+Such a tool could incorporate sentiment analysis to aid the user in finding
 particularly problematic content.
 
-\paragraph{Visual reminders of context}
-To mitigate privacy violations caused by poor user interfaces, the software
-must provide sufficient visual cues of context. For example, many but not all
-Google products support multiple accounts. However, the visual cue to indicate
-which account is active is a small, easy to ignore text name at the top right
-of the page.
-
 \paragraph{Expiring posts}
-Humans don't have perfect memories, and perhaps social networks should not
-either~\cite{delete}. Many users already engage in manual auditing and deletion
+Humans don't have perfect memories, so perhaps social networks shouldn't either
+~\cite{delete}. Many users already engage in manual auditing and deletion
 of old posts~\cite{fbtips2}. A better solution would be to build tools that let
 the user manage this more easily through an API: both Twitter and Facebook
-provide APIs for post deletion\footnote{Google Plus
-offers a read-only API.}. One way to reduce the likelihood of linked contextual
-identities would be to provide applications that expire posts after some time.
+provide APIs for post deletion\footnote{Google Plus offers a read-only API.}.
 
 \paragraph{Expiring contextual identities}
 Engaging in a long-term task such as house-buying
@@ -417,7 +416,7 @@ side-effects, such as long-term cookies that reveal sensitive information
 (e.g., the neighborhood of the house purchase, income information derived from
 purchases, other demographic data). For contextual identities that have
 outlived their usefulness, users would benefit from destruction of side-effects
-such as cookie data.
+such as cookie data and service accounts.
 
 \section{Summary}
 People have multiple contextual identities. Sharing personal information in
