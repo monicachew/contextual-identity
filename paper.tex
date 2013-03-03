@@ -42,17 +42,21 @@ empower users to have better control over their contextual identities.
 \begin{em}Song of Myself\end{em} \end{quote}
 
 The desire for privacy balances the desire for spontaneous, positive human
-interaction, which often requires sharing personal information.  The act of
-sharing alone does not negate expectation of privacy~\cite{boyd2}. Helen
-Nissenbaum has long argued that privacy violations come not from the simple
-sharing of personal information, but rather from sharing that information in a
-way that violates social norms, or in the wrong context~\cite{nissenbaum}.
+interaction, which often requires sharing personal information. The act of
+sharing alone does not negate expectation of privacy~\cite{boyd2}.
+%The desire for spontaneous, positive human interaction often requires sharing
+%personal information. Sharing information can lead to loss of privacy, though
+%it does not negate expectation of privacy~\cite{boyd2}. 
+Helen Nissenbaum has long argued that privacy violations come not from the
+simple sharing of personal information, but rather from sharing that
+information in a way that violates social norms, or in the wrong
+context~\cite{nissenbaum}.
 
 Lesbian, gay, bisexual, and transgendered youth are at risk for contextual
-identity violations.  Access to support is crucial for LGTB-identified youth
-who are at higher risk for bullying and suicide than non-LGTB youth, and much
-of that support is only accessible through the Internet in socially
-conservative areas~\cite{hrc}. In 2011 Bobbi Duncan and Taylor McCormick, two
+identity violations.  Access to support is crucial for LGTB-identified youth,
+who are at higher risk for bullying and suicide than non-LGTB youth~\cite{hrc}.
+Much of that support is only accessible through the Internet in socially
+conservative areas. In 2011 Bobbi Duncan and Taylor McCormick, two
 students at the University of Texas at Austin, were inadvertantly outed when
 their choir director added them to a Facebook group for Queer
 Chorus~\cite{fowler}. Even though both students had blocked their parents from
@@ -95,7 +99,7 @@ networks, information is rarely about a single person, and the tone of the
 message is as important to user effect as the contents.
 
 Many authors have discovered methods to link different contextual identities to
-the same person. Narayanan and Shmatikov present a re-identification technique
+an individual. Narayanan and Shmatikov present a re-identification technique
 to merge anonymized social graphs from different networks and prove that
 user identifiers from Netflix and IMDB and Flickr and Twitter can be
 linked~\cite{narayanan1,narayanan2}. Lindamood et al.~and Mislove et al.~show
@@ -147,7 +151,7 @@ co-workers, and friends), as well as aggressively linking photos and news
 items, resulted in a huge backlash~\cite{fugitivus,buzz}. In September 2012,
 Facebook imported old wall posts from 2008 into the new Timeline interface.
 Although wall posts were always visible from profile pages, the new Timeline
-interface brought old wall posts which users used to treat as private messages,
+interface brought old wall posts, which users used to treat as private messages
 before the advent of ``Like'' and comment buttons, to the attention of an
 audience that the user never anticipated~\cite{timeline}.
 
@@ -171,12 +175,11 @@ to participate in these networks without violating the terms of service.  The
 identity.
 
 Even worse, many of these providers now serve as login platforms for external
-sites, spreading these unsatisfiable policies outside the service providers
-themselves.  Facebook Connect is a login platform that allows third-party
-websites to authenticate users using their Facebook identity~\cite{fb_connect}.
-Because it is against the terms of service to have multiple Facebook accounts,
-using Facebook Connect has the unwanted side-effect of linking multiple
-contextual identities.
+sites. For example, Facebook Connect allows third-party websites to
+authenticate users using their Facebook identity~\cite{fb_connect}.  Because it
+is against the terms of service to have multiple Facebook accounts, using
+Facebook Connect has the unwanted side-effect of linking multiple contextual
+identities across multiple sites.
 
 Other federated login systems have support for multiple identifiers, but this
 feature can be poorly implemented or difficult to discover, leading to low use.
@@ -217,7 +220,7 @@ even in the absence of authentication, using the same device over time
 implicitly creates an identity through tracking techniques and local
 information. However, these points are far from obvious to a typical user,
 especially for users who don't distinguish the web application from the
-browser, from the operating system, or from the device.
+browser, from the operating system, or from the device\footnote{What is a browser? \url{https://www.youtube.com/watch?v=o4MwTvtyrUQ}} \footnote{\url{http://input.mozilla.org/en-US/?q=facebook&product=firefox}}.
 
 The computer science community must free itself from software-specific
 notions of identity if we are to help users to whom the very concept of
@@ -226,7 +229,8 @@ one might start with the questions:
 
 \begin{itemize}
 \item How is identity represented online?
-\item Is your identity tied to the device you are using?
+\item What do you need to represent your identity?
+\item Is your identity tied to your device?
 \item If you check your mail, read news, log on to a social network at a
 computer at the public library, does that affect your identity?
 \item What does it mean to share devices? If you lend your tablet to your
@@ -237,20 +241,27 @@ an influence on your online identity? What if you never use that account again?
 browsing experience or online identity? If so, for how long?
 \item Which parts of your online identity do you expect to be visible to
 your housemates, friends, relatives, or employers?
+\item Which parts of your online identity do you expect to be visible to
+websites you use? What about websites you don't use?
 \item Which parts of your identity do you want to share with whom?
 \item Which parts of your identity do you want to keep secret from whom?
 \item How does your identity change over time?
 \end{itemize}
 
-danah boyd has done excellent work surveying youth and social networks, and Pew
+danah boyd's work surveying youth and social networks is excellent, and Pew
 Internet is a good source for self-reported phone surveys on privacy and social
 media, but there is otherwise a dearth of research in these
 areas~\cite{boyd,pew1,pew2,pew3}.
+% digital natives is related but not exactly
 
 \subsection{How do users manage identity?}
 
 Users who are aware of having multiple identities engage in the following
 identity management techniques.
+
+\subsubsection{Separating identities}
+
+The following examples illustrate how users keep their identities separate.
 
 \paragraph{Multiple accounts}
 The long-time existence of support for multiple accounts in email clients
@@ -260,43 +271,83 @@ suggests that a large minority of Twitter users have multiple Twitter accounts,
 and the plethora of cross-posting or syndication software from one social
 network to another suggests that many users take advantage of multiple social
 networks~\cite{twitter}.
-\begin{comment}
-That is not to say that all users have the same
-tolerance or even need for multiple explicit identities: in fact many users may
-be exclusively task-oriented and use the Internet with specific tasks in mind
-rather than for social interaction or exploratory surfing\footnote{Even these
-users are subject to building implicit identities through the use of tracking
-techniques, however.}.
-\end{comment}
 
-\paragraph{Auditing}
-Wang et.~al suggest that common techniques for handling regret online include
-manual deletion of regrettable posts, self-censoring or delaying
-posts that they predict might bring regret~\cite{wang}.
+\paragraph{Multiple browsers}
+
+Using multiple browsers is a useful technique for managing multiple accounts.
+Some services support multiple accounts but not multiple login (e.g.,
+Twitter). For services that do (e.g., many Google services), the user interface
+may be so confusing that it leads to errors, so the best recommendation may be
+to use multiple browsers~\cite{yegge}.\footnote{Google recommends multiple
+browsers as an alternative to multiple login:
+\url{https://support.google.com/accounts/bin/answer.py?hl=en&answer=179235}}.
+Additionally, for users who want to separate work and
+personal browsing, using multiple browsers is the easiest solution.
+
+\paragraph{Multiple devices}
+
+Many users have multiple devices and many use them for different purposes.
+Sometimes the difference in purpose is due to the nature of the device (e.g.,
+GPS and mapping software are probably more often used in mobile devices) and
+some may be due to policy (e.g., personal browsing is limited to a personal
+laptop). Using multiple devices implicitly creates multiple browser states and
+thus multiple identities.  However, these identities may still be linked
+through authentication data or other techniques~\cite{aol}.
+
+\paragraph{Multiple profiles}
+
+Using multiple browsers forces separation between cookies, history, builtin
+password managers, and other local storage. However, several browsers support
+separation of profile data natively. Firefox has a Profile Manager, but it is
+so unusable that it will be removed.\footnote{See
+\url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}.} Google Chrome
+supports multiple profiles\footnote{Manage multiple users on Chrome:
+\url{https://support.google.com/chrome/bin/answer.py?hl=en&answer=2364824}}. In
+both cases, the threat model does not include users with malicious intent in
+the same household.
 
 \paragraph{Private browsing mode}
 Private browsing mode exists in all major browsers, but are not a complete
 solution~\cite{ABBJ10}. There is no standard behavior for private browsing
-mode, and interaction with extensions, treatment of cookies, history, and
-bookmarks upon entering and exiting this mode are different and serve different
-use cases. For example, entering private browsing in Firefox does not clear
+mode: interaction with extensions, treatment of cookies, history, and
+bookmarks upon entering and exiting are different across browsers.
+For example, entering private browsing in Firefox does not clear
 cookies, history, or other session data; session data is cleared on exiting
 private browsing mode. In contrast, incognito mode in Chrome makes previous
 session state unavailable and clears new session state on exit; this mode
 may be preferable as a ``Guest mode'' where the device owner does not want the
-guest to either view or pollute existing state.
-
-\paragraph{Profile management}
-Although a user may subconsciously be aware of their contextual identities,
-expecting users to enumerate their identities and manually curate them is
-probably too burdensome. Firefox has a Profile Manager, but it is so unusable
-that it will be removed.\footnote{See
-\url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}.}
+guest to either view or pollute existing state. L
 
 \paragraph{Cookie blockers}
 Disconnect and ShareMeNot are browser extensions to disallow interacting with
 service providers like Google and Facebook unless users explicitly choose to
-interact with that site~\cite{disconnect,franzi}.
+interact with that site~\cite{disconnect,franzi}.  Collusion is a tool for
+visualizing cookies~\cite{collusion}, in particular third-party cookies set by
+tracking sites which are typically ad networks.  Once the user knows which
+sites are tracking them, they can choose to block cookies from those sites.
+
+\paragraph{Controlling Information Flow}
+Do Not Track is an HTTP request header that signals to the website that the
+user does not want to be tracked~\cite{dnt}. Although Do Not Track is
+unenforceable from the client side, service providers who ignore signal
+lose reputation by acting against their users' explicit wishes.
+
+\paragraph{Service settings} Service configurations such as Facebook friends,
+Google circles and privacy settings are intended for users to self-manage
+privacy and identity. However, shifting privacy settings and complex,
+interacting features make these configurations unpredictable for many users.
+
+\subsubsection{Linking identities}
+\paragraph{Linking between profiles}
+
+-link from fb profile to blog
+-link between services
+
+\paragraph{Synchronizing browser data}
+
+- Chrome sync
+- picl
+- xmarks
 
 \subsection{How can we improve identity management tools?}
 \paragraph{Task inference}
@@ -321,22 +372,15 @@ suggestions that aren't relevant to that identity, protecting the user from
 both shoulder-surfing and distraction.
 
 \paragraph{Mitigating explicit linkage}
-Another partial solution is to prompt the user when they're about to link
-multiple contextual identities through a federated login service. For example,
-Persona is the suite of tools that implements the BrowserID protocol, and it
-supports multiple email identifiers~\cite{browserid}.
-Because we can categorize the type of service by URL
-as \texttt{about:profile} does, Persona could prompt the user when they're about
-to link the same email identifier to radically different contextual identities,
-such as ones for dating and professional use.
-
-\paragraph{Controlling Information Flow}
-Do Not Track is an HTTP request header that signals to the website that the
-user does not want to be tracked~\cite{dnt}. Although Do Not Track is
-unenforceable from the client side, service providers who ignore signal will
-lose reputation by acting against their users' explicit wishes.
+Federated login services can prevent linking contextual identities to the same
+user identifier. For example, Persona is the suite of tools that implements the
+BrowserID protocol, and it supports multiple email
+identifiers~\cite{browserid}.  If the type of service is known, Persona could
+prevent the user from associating the same email identifier to radically
+different contextual identities, such as ones for dating and professional use.
 
 \paragraph{Auditing}
+(needs rewrite)
 A major cause of user embarrassment is exposing information to the wrong
 audience. A browser is in an ideal position to intermediate social network
 posts, aggregate them locally, and present them to the user when they desire to
@@ -348,13 +392,6 @@ audience on the user's behalf, auditing gives the user a good opportunity to
 review posts that might cause regrets. In the case of high-volume users, such a
 tool could incorporate sentiment analysis to aid the user in finding
 particularly problematic content.
-
-\paragraph{Implicit identity generation}
-Profiles can be generated by user-supplied application-level data, but also
-implicitly through browsing via tracking techniques.  Collusion is a tool for
-visualizing cookies~\cite{collusion}, in particular third-party cookies set by
-tracking sites which are typically ad networks.  Once the user knows which
-sites are tracking them, they can choose to block cookies from those sites.
 
 \paragraph{Visual reminders of context}
 To mitigate privacy violations caused by poor user interfaces, the software
