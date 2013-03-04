@@ -263,10 +263,8 @@ The following examples illustrate how users keep their identities separate.
 The long-time existence of support for multiple accounts in email clients
 suggests that many users have multiple email identifiers, which could be
 considered as a proxy for identity if tied to service accounts. Similarly, data
-suggests that a large minority of Twitter users have multiple Twitter accounts,
-and the plethora of cross-posting or syndication software from one social
-network to another suggests that many users take advantage of multiple social
-networks~\cite{twitter}.
+suggests that a large minority of Twitter users have multiple Twitter
+accounts~\cite{twitter}.
 
 \paragraph{Multiple browsers}
 
@@ -333,18 +331,35 @@ accounts, using multiple browsers and devices is a drawback, not a benefit.
 These users want fewer contextual identities and use the following techniques
 to merge them.
 
-\paragraph{Linking between profiles}
+\paragraph{Building social graphs}
 
--link from fb profile to blog
--link between services
+Users can explicitly create links between contextual identities, e.g.  linking
+to their blog from their Flickr profile, or resharing a blog post via Twitter.
+It is also easy to implicitly create links between contextual identities,
+sometimes accidentally: generating two isomorphic graphs at different services
+is often enough to re-identify an individual~\cite{narayanan1}. The plethora of
+cross-posting software available suggests that users often want to link
+identities.
+
+Building reputation online is a long and arduous process; a user who has built
+up high credibility in one social network may want to transfer that credibility
+when using a new service by using the same identifier or somehow proving in the
+new service that they control other existing, credible identities.  The rise of
+verified account mechanisms in Twitter, Google Plus and Facebook indicates that
+this is a real problem.
 
 \paragraph{Synchronizing browser data}
 
-- Chrome sync
-- picl
-- xmarks
+All five major browsers (Firefox, Chrome, Safari, Internet Explorer, and Opera)
+offer synchronizing some set of browser data across devices, with varying
+degrees of success. Multiple cross-browser applications also exist to
+synchronize bookmarks and passwords~\footnote{Bookmark sync: \url{xmarks.com}, password sync: \url{lastpass.com}}.
 
 \subsubsection{Curating identities}
+
+Given the large number of social network users and that 30-40\% of spoken
+communication is devoted to informing others about ourselves, many users are
+bound to share personal information online that they regret~\cite{tamir}.
 
 \paragraph{Service settings} Service configurations such as Facebook friends,
 Google circles and privacy settings are intended for users to self-manage
@@ -352,16 +367,18 @@ privacy and identity. However, shifting privacy settings and complex,
 interacting features make these configurations unpredictable for many users.
 
 \paragraph{Auditing} Wang et. al suggest that common techniques
-for handling regret online include manual deletion of regret-
-table posts, self-censoring or delaying posts that they predict
-might bring regret~\cite{wang}. Pew Internet reports that 57\% of Internet
-users periodically search for themselves to manage reputation, with young
-adults being the most active~\cite{pew3}.
+for handling regret online include manual deletion of regret- table posts,
+self-censoring or delaying posts that they predict might bring
+regret~\cite{wang}. Pew Internet reports that 57\% of Internet users
+periodically search for themselves to manage reputation, with young adults
+being the most active~\cite{pew3}.
 
 \subsection{How can we improve identity management tools?}
 
-Service providers are highly incentivized to make linking identities easy, so
-we concentrate on tools to help separate and curate identities.
+Service providers are highly incentivized to make linking identities easy;
+more tools to help separate and curate identities are necessary. Without
+knowing more about how users think about identity, we concentrate solely on
+automating manual processes that users already perform.
 
 \begin{comment}
 \paragraph{Automatically inferring identities}
@@ -386,8 +403,8 @@ suggestions that aren't relevant to that identity, protecting the user from
 both shoulder-surfing and distraction.
 \end{comment}
 
-\paragraph{Mitigating explicit linkage} Federated login services can prevent
-linking contextual identities to the same user identifier.  For example, a
+\paragraph{Mitigating accidental linkage} Federated login services can prevent
+linking contextual identities to the same user identifier. For example, a
 federated login service that supported multiple identifiers could prevent the
 user from associating the same identifier to radically different
 contextual identities, such as ones for dating and professional use.
@@ -402,28 +419,29 @@ Such a tool could incorporate sentiment analysis to aid the user in finding
 particularly problematic content.
 
 \paragraph{Expiring posts}
-Humans don't have perfect memories, so perhaps social networks shouldn't either
-~\cite{delete}. Many users already engage in manual auditing and deletion
-of old posts~\cite{fbtips2}. A better solution would be to build tools that let
-the user manage this more easily through an API: both Twitter and Facebook
-provide APIs for post deletion\footnote{Google Plus offers a read-only API.}.
+Humans don't have perfect memories, and neither should social
+networks~\cite{delete}. Many users already engage in manual auditing and
+deletion of old posts~\cite{fbtips2}. A better solution would be to build tools
+that let the user manage this more easily through an API: both Twitter and
+Facebook provide APIs for post deletion\footnote{Google Plus offers a read-only
+API.}.
 
 \paragraph{Expiring contextual identities}
-Engaging in a long-term task such as house-buying
-often requires the construction of a contextual identity. The tasks associated
-with this identity have an externally imposed end date and may have long-lived
-side-effects, such as long-term cookies that reveal sensitive information
-(e.g., the neighborhood of the house purchase, income information derived from
-purchases, other demographic data). For contextual identities that have
-outlived their usefulness, users would benefit from destruction of side-effects
-such as cookie data and service accounts.
+Engaging in a long-term task such as house-buying often requires the
+construction of a contextual identity. The tasks associated with this identity
+have an externally imposed end date and may have long-lived side-effects, such
+as long-term cookies that reveal sensitive information (e.g., the neighborhood
+of the house purchase, income information derived from purchases, other
+demographic data). For contextual identities that have outlived their
+usefulness, users would benefit from destruction of side-effects such as cookie
+data and service accounts.
 
 \section{Summary}
 People have multiple contextual identities. Sharing personal information in
 appropriate contexts fosters positive human interaction.  We hope that
-contextual identity will serve as a useful notion for developers to understand
-their users' privacy needs, and to develop tools that allow users to act in
-their contextual identities in a spontaneous, relaxed, and interesting way.
+contextual identity serves as a useful notion for developers to understand
+their users' privacy needs and develop tools to help users manage their
+identities.
 
 \begin{comment}
 \section{Acknowledgements}
