@@ -136,9 +136,8 @@ reveal in a given context.
 Redistributing information out of its original context often leads to
 embarrassment~\cite{nissenbaum}.  In November 2007, Facebook Beacon allowed
 third-party sites to publish purchases, travel bookings, movie rentals and more
-to the user's activity stream.  Because of poor opt-out and lack of visibility
-into what was being published, user outcry was
-immediate~\cite{mccarthy,nakashima}.  In December 2007, Google Reader exposed
+to the user's activity stream.  Poor opt-out and lack of visibility
+into what was being published led to user surprise and dismay~\cite{mccarthy,nakashima}.  In December 2007, Google Reader exposed
 RSS feeds of user-marked news stories to the user's Google Talk contacts, which
 includes everyone with whom a user has chatted whether they be co-workers,
 supervisors, or friends. Although this feed was always public, prior to this
@@ -258,7 +257,10 @@ techniques to separate, link, and curate identities.
 
 \subsubsection{Separating identities}
 
-The following examples illustrate how users keep their identities separate.
+The following examples illustrate how users attempt to preserve boundaries
+between identities. None of these techniques are failsafe, but they serve as
+useful reminders that perfect solutions may not be necessary, especially in the
+case where information leaks by casual or accidental inspection.
 
 \paragraph{Multiple accounts}
 The long-time existence of support for multiple accounts in email clients
@@ -271,7 +273,7 @@ accounts~\cite{twitter}.
 
 Using multiple browsers is a useful technique for managing multiple accounts.
 Some services support multiple accounts but not multiple login (e.g.,
-Twitter). For services that do (e.g., many Google services), the user interface
+Twitter). For services that do, the user interface
 may be so confusing that it leads to errors, so the best recommendation may be
 to use multiple browsers~\cite{yegge}.\footnote{Using multiple
 browsers as an alternative to multiple login:
@@ -282,9 +284,9 @@ personal browsing, using multiple browsers is the easiest solution.
 \paragraph{Multiple devices}
 
 Many users have multiple devices and many use them for different purposes.
-Sometimes the difference in purpose is due to the nature of the device (e.g.,
+Some of this difference is due to the nature of the device (e.g.,
 GPS and mapping software are probably more often used in mobile devices) and
-some may be due to policy (e.g., personal browsing is limited to a personal
+some may be due to policy (e.g., limiting work activities to a corporate
 laptop). Using multiple devices implicitly creates multiple browser states and
 thus multiple identities.  However, these identities may still be linked
 through authentication data or other techniques.%~\cite{aol}
@@ -294,8 +296,8 @@ through authentication data or other techniques.%~\cite{aol}
 Several browsers support separation of profile data, including cookies,
 history, passwords, and other local storage. Firefox 
 %\url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}.}
-and Chrome support multiple profiles, though neither of these is very
-discoverable or easy to use.\footnote{Chrome:
+and Chrome support multiple profiles, though neither of these implementations
+is discoverable or easy to use.\footnote{Chrome:
 \url{https://support.google.com/chrome/bin/answer.py?hl=en&answer=2364824},
 Firefox: \url{https://bugzilla.mozilla.org/show\_bug.cgi?id=214675\#c53}} The
 threat model does not include users with malicious intent in the same
@@ -330,22 +332,22 @@ to their blog from their Flickr profile, or resharing a blog post via Twitter.
 It is also easy to implicitly create links between contextual identities,
 sometimes accidentally: generating two isomorphic graphs at different services
 is often enough to re-identify an individual~\cite{narayanan1}. The plethora of
-cross-posting software available suggests that users often want to link
+cross-posting software suggests that users often want to link
 identities.
 
 Building reputation online is a long and arduous process; a user who has built
 up high credibility in one social network may want to transfer that credibility
 when using a new service by using the same identifier or somehow proving in the
 new service that they control other credible identities.  The advent
-of verified account mechanisms in Twitter, Google Plus and Facebook indicates
-that this problem is on the rise.
+of verified account mechanisms in Twitter, Google Plus and Facebook suggests
+this problem is on the rise.
 
 \paragraph{Synchronizing browser data}
 
 All five major browsers (Firefox, Chrome, Safari, Internet Explorer, and Opera)
-offer synchronizing some set of browser data across devices, with varying
-degrees of success. Multiple cross-browser applications also exist to
-synchronize bookmarks and passwords.\footnote{Bookmark sync: \url{xmarks.com}, password sync: \url{lastpass.com}}
+offer synchronizing a subset of browser data across devices.
+Multiple cross-browser applications also exist to
+synchronize bookmarks and passwords.\footnote{An example of bookmark sync is \url{xmarks.com}, one cloud-based password manager is \url{lastpass.com}.}
 
 \subsubsection{Curating identities}
 
@@ -357,6 +359,9 @@ bound to share information they later regret~\cite{tamir}.
 Google circles and privacy settings are intended for users to self-manage
 privacy and identity. However, shifting privacy settings and complex,
 interacting features make these configurations unpredictable for many users.
+According to Pew Internet, 71\% of users change privacy-related settings; yet
+the large number of users who experience regret on social networks indicates
+that these settings are not working as intended~\cite{pew3}.
 
 \paragraph{Auditing} Wang et. al suggest that common techniques
 for handling regret online include manual deletion of regret- table posts,
@@ -368,7 +373,7 @@ being the most active~\cite{pew3}.
 \subsection{How can we improve identity management tools?}
 
 Service providers are highly incentivized to make linking identities easy;
-more tools to help separate and curate identities are necessary. Without
+users need more tools to help separate and curate identities. Without
 knowing more about how users think about identity, we concentrate solely on
 automating manual processes that users already perform.
 
@@ -388,8 +393,8 @@ Such a tool could incorporate sentiment analysis to aid the user in finding
 particularly problematic content.
 
 \paragraph{Expiring posts}
-Humans don't have perfect memories, and neither should social
-networks~\cite{delete}. Many users already engage in manual auditing and
+Humans don't have perfect memories, and we question why social networks
+do~\cite{delete}. Many users already engage in manual auditing and
 deletion of old posts~\cite{fbtips2}. A better solution would be to build tools
 that let the user manage this more easily through an API: both Twitter and
 Facebook provide APIs for post deletion.
@@ -407,7 +412,7 @@ data and service accounts.
 
 \section{Summary}
 People have multiple contextual identities. Sharing personal information in
-appropriate contexts fosters positive human interaction.  We hope that
+appropriate contexts fosters positive human interaction and doesn't negate the need or desire for privacy. We hope that
 contextual identity serves as a useful notion for developers to understand
 their users' privacy needs and develop tools to help users manage their
 identities.
